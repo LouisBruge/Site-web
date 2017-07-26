@@ -1,0 +1,86 @@
+/* modification de l'ensemble du texte */
+*
+{
+	font-family : 'New Roman', sans-serif;
+	font-size : 1em;
+	line-height : 120%;
+}
+
+#barre
+{
+	position : fixed;
+	top : 2px;
+	left : 10px;
+}
+nav
+{
+	position : fixed;
+	top : 15px;
+	left : 20px;
+}
+
+section
+{
+	position : absolute;
+	width-min : 1000px;
+	margin-left : 190px;
+	margin-right: 5px;
+	margin-bottom : 5px;
+	margin-top : 0px;
+}
+
+aside
+{
+	position : fixed;
+	top : 2px;
+	right : 5px;
+}
+
+footer
+{
+	position : fixed;
+	bottom : 0px;
+	width-min : 1000px;
+	margin-left : 190px;
+	margin-right : 245px;
+
+}
+
+/* modification de la balise titres */
+h1
+{
+	font-family : 'New Roman';
+	font-size : 1.3em;
+	font-weight : bold;
+	line-height : 120%;
+}
+
+h2
+{
+	font-family : 'New Romain';
+	font-size : 1.1em;
+	font-weight : normal;
+	font-style : italic ;
+	line-height : 120%;
+}
+
+cite
+{
+	line-height : 80%;
+	font-style: italic;
+}
+/* Paramètres des tableaux et des cases de tableau */
+td,th
+    {
+           border: 1px solid black ; /* les cellules ont une bordure visible de 1 px */
+       }
+
+table
+       {
+           border-collapse : collapse ; /* les bordures sont jointes */
+    }
+
+    th
+    {
+        background : grey ;
+    }
