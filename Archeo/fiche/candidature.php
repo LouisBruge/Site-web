@@ -29,6 +29,8 @@
 	<h1> Contact </h1>
 <?php
 		GetContactsUnique($valeur['contact']);
+
+		require($_SERVER['DOCUMENT_ROOT'] . '/Archeo/FORMULAIRE/candidature-update.php');
 	}
 	else
 	{

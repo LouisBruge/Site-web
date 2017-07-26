@@ -73,6 +73,25 @@ function InputCandidature($valeur)
 	};
 }
 
+function UpdateReponseCandidature($valeur)
+{
+	$conn = connectiondb();
+
+	try
+	{
+		$req = $conn->prepare('UPDATE candidature SET type_rep = :type_rep, reponse = :reponse WHERE id = :id');
+		$req->bindParam(':id', $valeur['id'], PDO::PARAM_INT);
+		$req->bindParam(':reponse', $valeur['reponse'], PDO::PARAM_STR);
+		$req->bindParam(':type_rep', $valeur['type_rep'], PDO::PARAM_STR);
+		$req->execute();
+	}
+	catch(PDOException $e)
+	{ 
+		echo '<strong> Erreur : </strong> ' . $e->getMessage();
+	};
+}
+
+
 function InputContact($valeur)
 {
 	$conn = connectiondb();

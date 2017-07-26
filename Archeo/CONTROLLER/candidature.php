@@ -11,6 +11,13 @@ function controllerCandidature($donnee)
 	$donnee['n_annonce'] = controllerNumeroAnnonce($donnee['n_annonce']);
 }
 
+function controllerReponseCandidature($donnee)
+{
+	$donnee['id'] = controllerInt($donnee['id']);
+	$donnee['reponse'] = htmlspecialchars($donnee['reponse']);
+	$donnee['booleanreponse'] = controllerBoolean($donnee['booleanreponse']);
+}
+
 function controllerInt($donnee)
 {
 	$donnee = (int) $donnee;
