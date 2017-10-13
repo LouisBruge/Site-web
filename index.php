@@ -11,10 +11,6 @@ session_start();
 			<link rel="stylesheet" href="design.css" type="text/css" media="screen" />
 		</head>
 		<body>
-		<header>
-			<h1> Home's Server </h1>
-		</header>
-
 			<?php include("menu.php") ; ?>
 		<main>
 
