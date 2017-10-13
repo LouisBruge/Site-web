@@ -15,5 +15,7 @@
 			<h1> Annuaire téléphonique </h1>
 			<?php require($_SERVER['DOCUMENT_ROOT'] . '/SQL/annuaire.php'); ?>
 		</section>
-	</body>
+</main>
+</body>
+	<?php include($_SERVER['DOCUMENT_ROOT'] . '/footer.php'); ?>
 </html>

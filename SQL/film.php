@@ -49,6 +49,7 @@ $reponse->closeCursor();
 <a href=#debut>Return vers le début</a>
 		</section>	
 	</p>
+</main>
 </body>
 	<?php include($_SERVER['DOCUMENT_ROOT'] . '/footer.php'); ?>
 </html>

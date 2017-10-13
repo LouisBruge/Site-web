@@ -43,6 +43,8 @@ session_start(); ?>
 			?>
 		</section>
 	</p>
-</body>
-</html>
 
+			</main>
+		</body>
+			<?php include("footer.php") ; ?>
+	</html>

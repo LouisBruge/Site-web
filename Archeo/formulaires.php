@@ -18,5 +18,7 @@
 	<?php require($_SERVER['DOCUMENT_ROOT'] . '/Archeo/FORMULAIRE/contact.php'); ?>
 	</section>
        </p>
-        </body>
+</main>
+</body>
+	<?php include($_SERVER['DOCUMENT_ROOT'] . '/footer.php'); ?>
 </html>

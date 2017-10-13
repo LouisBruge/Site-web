@@ -1,8 +1,10 @@
 <header>
-		<h1> Home's Server </h1>
+		<div id="nom-site" >
+			<h1> Home's Server </h1>
+		</div>
 
 <!-- login intégré dans l'header --!>
-	<id="login">
+	<div id="login">
 		<?php
 			if(isset($_SESSION['login']) && isset($_SESSION['password']))
 			{
@@ -11,7 +13,7 @@
 			else
 			{
 	?>
-		<form method="post" action="/login.php" id='login'>
+		<form method="post" action="/login.php" id='login-form'>
 			<input type="text" name="login" required placeholder="Pseudonyme" />
 			<input type="password" name="password" required placeholder="Mot de Passe" />
 			<input type="submit" name="loger" /> <br />
@@ -19,16 +21,18 @@
 	<?php
 		}
 	?>
-	</id>
+	</div>
 
 <!-- Barre de recherche intégrée dans l'header --!>
-	<id="barre">
+	<div id="barre">
 		<form method="post" action="/SQL/test.php" id="requete">
 			<input type="search" name="recherche" required placeholder="Barre de recherche" />
 			<input type="submit" name="Recherche" /> <br />
 		</form>
-	</id>
+	</div>
 </header>
+
+<main>
 
         <nav id="menu">
             <div class="element_menu">
