@@ -1,3 +1,35 @@
+<header>
+		<h1> Home's Server </h1>
+
+<!-- login intégré dans l'header --!>
+	<id="login">
+		<?php
+			if(isset($_SESSION['login']) && isset($_SESSION['password']))
+			{
+				echo '<a href="/login.php">' . $_SESSION['login'] . '</a>'; 
+			}
+			else
+			{
+	?>
+		<form method="post" action="/login.php" id='login'>
+			<input type="text" name="login" required placeholder="Pseudonyme" />
+			<input type="password" name="password" required placeholder="Mot de Passe" />
+			<input type="submit" name="loger" /> <br />
+		</form>
+	<?php
+		}
+	?>
+	</id>
+
+<!-- Barre de recherche intégrée dans l'header --!>
+	<id="barre">
+		<form method="post" action="/SQL/test.php" id="requete">
+			<input type="search" name="recherche" required placeholder="Barre de recherche" />
+			<input type="submit" name="Recherche" /> <br />
+		</form>
+	</id>
+</header>
+
         <nav id="menu">
             <div class="element_menu">
                  <ul id="tabs">
@@ -23,27 +55,4 @@
                  </ul>
             </div>
         </nav>
-<aside>
-	<?php
-		if(isset($_SESSION['login']) && isset($_SESSION['password']))
-			{
-				echo '<a href="/login.php">' . $_SESSION['login'] . '</a>'; 
-		}
-		else
-		{
-?>
-	<form method="post" action="/login.php" id='login'>
-		<input type="text" name="login" required placeholder="Pseudonyme" />
-		<input type="password" name="password" required placeholder="Mot de Passe" />
-		<input type="submit" name="loger" /> <br />
-	</form>
-	<?php
-		}
-?>
-</aside>
-<id="barre">
-	<form method="post" action="/SQL/test.php" id="requete">
-		<input type="search" name="recherche" required placeholder="Barre de recherche" />
-		<input type="submit" name="Recherche" /> <br />
-	</form>
-</id>
+
