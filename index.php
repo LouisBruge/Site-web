@@ -23,27 +23,27 @@ session_start();
                 </section>
 
                 <div class="biblio">
-				    <h2>Base de donnée biblio</h2>
+				    <h2>Base Bibliographique</h2>
 				    <p>
-				    	<a href="SQL/ouvrage.php">Accés à la base bibliographique</a><br/>
-				    	<a href="formulaires.php#monographie">Accés au formulaire d'enregistrement de la base bibliographique</a><br/>
+				    	<a href="SQL/ouvrage.php">Base de Donnée</a><br/>
+				    	<a href="formulaires.php#monographie">Formulaires d'enregistrement</a><br/>
 				    </p>
                 </div>
 
 
                 <div class="jeuxVideo">
-				    <h2> Base de donnée des jeux vidéo </h2>
+				    <h2> Base Vidéoludique </h2>
 				    <p>
-					    <a href="SQL/jeux_video.php">Accés à la base jeux vidéoludique</a><br/>
-					    <a href="formulaires.php#jeux_video">Accés au formulaire d'enregistrement de la base de donnée des jeux videos</a><br />
+					    <a href="SQL/jeux_video.php">Base de Donnée</a><br/>
+					    <a href="formulaires.php#jeux_video">Formulaires d'enregistrement</a><br />
 				    </p>
                 </div>
 
                 <div class="film">
-				    <h2> Base de donnée des films </h2>
+				    <h2> Base Filmographique </h2>
 				    <p>
-					    <a href="SQL/film.php">Accés à la base filmographique</a><br/>
-					    <a href="formulaires.php#film">Accés au formulaire d'enregistrement de la base filmographique</a><br />
+					    <a href="SQL/film.php">Base de Donnée</a><br/>
+					    <a href="formulaires.php#film">Formulaires d'enregistrement</a><br />
 				    </p>
                 </div>
 				</section>
