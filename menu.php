@@ -1,6 +1,6 @@
 <header>
 		<div id="nom-site" >
-			<h1> Home's Server </h1>
+			<a href="/index.php"><h1> Home's Server </h1></a>
 		</div>
 
 <!-- login intégré dans l'header --!>

@@ -21,6 +21,7 @@ h1
 	font-size : 1.25em; /* soit 20px */
 	font-weight : bold;
 	line-height : 120%;
+    font-color: #FFF
 }
 
 h2
@@ -35,6 +36,10 @@ h2
 p, a {
 }
 
+strong{
+    font-weight: bold;
+}
+
 cite
 {
 	line-height : 80%;
@@ -43,6 +48,9 @@ cite
 	font-size: 1em;
 }
 
+li
+{
+}
 
 /*
  #### Organisation des boxes et des ensembles 
@@ -66,23 +74,58 @@ header {
 	align-items: center;
 }
 
+
 header h1  {
 	font-size: 2.75em;
 	font-variant: small-caps;
-	font-style: italic;
 	line-height: 0em;
-	text-shadow: #B5B5B5 -5px 3px 4px;
+    font-color: black;
+    
 }
 
 #nom-site {
 	flex: 1;
-	text-align: center;
 }
+
 
 #login {
-	padding: 0 0.5% 0 0.5%;
+	display: flex;
+	flex-wrap: nowrap;
+	flex-direction: row;
+	justify-content: flex-end;
+	align-items: center;
+    padding: 0 0.5% 0 0.5%;
 }
 
+/*
+ * menu-sidebar's structure
+ */
+#menu {
+    padding: 0 2% 0 0;
+    margin: 0 2.5% 0 0;
+	background-color: #686868;
+	opacity: 0.90;
+}
+
+#menu ul {
+    list-style: none;
+    padding: 0 0 0 9%;
+}
+
+#menu li {
+}
+
+#menu #Archeologie li {
+    padding: 0 0 0 2%;
+}
+
+#menu #inventaires li{
+    padding: 0 0 0 2%;
+}
+
+#menu #annuaire li{
+    padding: 0 0 0 2%;
+}
 
 /* 
  * #### Organisation de la partie principale du site
@@ -92,8 +135,36 @@ main {
 	flex-flow: row nowrap;	
 }
 
-section {
+
+/* Parameter for the index.php menu of Databases */
+.accesDB {
 	padding: 0 5% 0 0.5%;
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.accesDB ul {
+    list-style-type: none;
+    padding: 0 0 0 2%;
+    margin: 0;
+}
+
+.accessDB li {
+    padding: 0 0 0 0.5%;
+}
+
+.accessDB li a { /* à modifier, ne fonctionne pas pour le moment!!! */
+    padding: 5%;
+    border: 1 solid black;
+    border-radius: 15px;
+}
+
+.biblio, .jeuxVideo, .film {
+    flex: 1 1 auto;
+    padding: 0.5%;
+    border: 1px solid black;
+    margin: 0.5%;
+    border-radius: 9px;
 }
 
 /* 

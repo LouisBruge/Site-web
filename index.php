@@ -12,7 +12,7 @@ session_start();
 		</head>
 		<body>
 			<?php include("menu.php") ; ?>
-				<section class="accesDB">
+				<section class="main-test">
 
                 <section ="banner">
 				    <h1> Bienvenue sur le site du réseau local de la maison</h1>
@@ -22,11 +22,14 @@ session_start();
 				    </p>
                 </section>
 
+				<section class="accesDB">
                 <div class="biblio">
 				    <h2>Base Bibliographique</h2>
 				    <p>
-				    	<a href="SQL/ouvrage.php">Base de Donnée</a><br/>
-				    	<a href="formulaires.php#monographie">Formulaires d'enregistrement</a><br/>
+                        <ul>
+                            <li><a href="SQL/ouvrage.php">Base de Donnée</a><br/></li>
+				    	    <li><a href="formulaires.php#monographie">Formulaires d'enregistrement</a><br/></li>
+                        </lu>
 				    </p>
                 </div>
 
@@ -34,19 +37,24 @@ session_start();
                 <div class="jeuxVideo">
 				    <h2> Base Vidéoludique </h2>
 				    <p>
-					    <a href="SQL/jeux_video.php">Base de Donnée</a><br/>
-					    <a href="formulaires.php#jeux_video">Formulaires d'enregistrement</a><br />
+                        <ul>
+					        <li><a href="SQL/jeux_video.php">Base de Donnée</a><br/></li>
+					        <li><a href="formulaires.php#jeux_video">Formulaires d'enregistrement</a><br /></li>
+                        </ul>
 				    </p>
                 </div>
 
                 <div class="film">
 				    <h2> Base Filmographique </h2>
 				    <p>
-					    <a href="SQL/film.php">Base de Donnée</a><br/>
-					    <a href="formulaires.php#film">Formulaires d'enregistrement</a><br />
+                        <ul>
+					        <li><a href="SQL/film.php">Base de Donnée</a><br/></li>
+    					    <li><a href="formulaires.php#film">Formulaires d'enregistrement</a><br /></li>
+                        </ul>
 				    </p>
                 </div>
 				</section>
+                </section>
 			</main>
 		</body>
 			<?php include("footer.php") ; ?>
