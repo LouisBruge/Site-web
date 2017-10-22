@@ -37,7 +37,6 @@
         <nav id="menu">
             <div class="element_menu">
                  <ul id="tabs">
-                     <li><a href="/index.php">Accueil</a></li>
 		     <li> Annuaire </li>
 			<ul id="annuaire">
 		     		<li><a href="/annuaire.php">Liste</a></li>
@@ -48,8 +47,8 @@
 				<li><a href="/SQL/film.php"/>Films</a></li>
 				<li><a href="/SQL/jeux_video.php"/>Jeux</a></li>
 				<li><a href="/SQL/ouvrage.php"/>Ouvrages</a></li>
+                <li><a href="/formulaires.php">Formulaires</a></li>
 			</ul>
-                     <li><a href="/formulaires.php">Formulaires</a></li>
 		     <li>Archéologie</li>
 			<ul id="Archeologie">
 		     		<li><a href="/Archeo/fiche/candidature.php">Candidatures</a></li>
