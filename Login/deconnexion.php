@@ -16,6 +16,8 @@ session_destroy();
 	Vous êtes déconnectés du serveur, Cordialement	
 		</section>
 	</p>
+    </main>
 </body>
+			<?php include($_SERVER['DOCUMENT_ROOT']."/footer.php") ; ?>
 </html>
 

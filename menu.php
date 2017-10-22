@@ -8,12 +8,12 @@
 		<?php
 			if(isset($_SESSION['login']) && isset($_SESSION['password']))
 			{
-				echo '<a href="/login.php">' . $_SESSION['login'] . '</a>'; 
+				echo '<a href="/Login/login.php">' . $_SESSION['login'] . '</a>'; 
 			}
 			else
 			{
 	?>
-		<form method="post" action="/login.php" id='login-form'>
+		<form method="post" action="/Login/login.php" id='login-form'>
 			<input type="text" name="login" required placeholder="Pseudonyme" />
 			<input type="password" name="password" required placeholder="Mot de Passe" />
 			<input type="submit" name="loger" /> <br />
