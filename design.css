@@ -143,20 +143,31 @@ main {
     flex-flow: row nowrap;
 }
 
+.accesBD h2 {
+    display: block;
+    background-color: black;
+    font-color: white;
+    text-align: center;
+}
+
 .accesDB ul {
     list-style-type: none;
     padding: 0 0 0 2%;
     margin: 0;
 }
 
-.accessDB li {
-    padding: 0 0 0 0.5%;
+.accesDB li {
+    padding: 0 0.5%;
+    text-align: center;
 }
 
-.accessDB li a { /* à modifier, ne fonctionne pas pour le moment!!! */
-    padding: 5%;
-    border: 1 solid black;
+.accesDB li a { 
+    display:block;
+    padding: 2% 5%;
+    border: 1px solid black;
+    background-color: black;
     border-radius: 15px;
+    text-color: white; /* à modifier, ne fonctionne pas pour le moment!!! */
 }
 
 .biblio, .jeuxVideo, .film {
