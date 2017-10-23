@@ -14,12 +14,13 @@ session_start();
 			<?php include("menu.php") ; ?>
 				<section class="main-test">
 
-                <section ="banner">
+                <section class="banner">
 				    <h1> Bienvenue sur le site du réseau local de la maison</h1>
 	    			<p> 
 					    Le site a pour vocation d'améliorer la gestion interne du pc (serveur de musique) ainsi que des différentes bases de données liées à ce dernier (bibliographiques, lithiques et référencement des sites archéologiques et des opérateurs)<br/>
 					    <strong> Le site est pour le moment en construction. Sa structure est susceptible d'évoluer à l'avenir</strong>
 				    </p>
+				<cite> Credit: <a href="https://picjumbo.com/electronics-chip-board-hardware-close-up-2/">picjumbo</a> <cite>
                 </section>
 
 				<section class="accesDB">
