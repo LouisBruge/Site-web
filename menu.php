@@ -40,7 +40,7 @@
 		     <li> Annuaire </li>
 			<ul id="annuaire">
 		     		<li><a href="/Annuaire/annuaire.php">Liste</a></li>
-				<li><a href="Annuaire/formulaire.php">Formulaire</a></li>
+				<li><a href="/Annuaire/formulaire.php">Formulaire</a></li>
 			</ul>
 		     <li>Inventaires</li>
 			<ul id="inventaires">

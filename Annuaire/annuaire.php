@@ -6,14 +6,14 @@
 	<head>
 		<title>	Annuaire</title>
 		<meta charset="utf-8">
-		<link rel="stylesheet" href="design.css" type="text/css" media="screen" />
+		<link rel="stylesheet" href="/design.css" type="text/css" media="screen" />
 	</head>
 	<body>
-		<?php include("menu.php") ; ?>
+		<?php include($_SERVER['DOCUMENT_ROOT'] . '/menu.php') ; ?>
 		<section>
 
 			<h1> Annuaire téléphonique </h1>
-			<?php require($_SERVER['DOCUMENT_ROOT'] . '/SQL/annuaire.php'); ?>
+			<?php require('controller.php'); ?>
 		</section>
 </main>
 </body>
