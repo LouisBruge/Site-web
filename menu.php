@@ -39,15 +39,15 @@
                  <ul id="tabs">
 		     <li> Annuaire </li>
 			<ul id="annuaire">
-		     		<li><a href="/annuaire.php">Liste</a></li>
-				<li><a href="/formulaire-annuaire.php">Formulaire</a></li>
+		     		<li><a href="/Annuaire/annuaire.php">Liste</a></li>
+				<li><a href="Annuaire/formulaire.php">Formulaire</a></li>
 			</ul>
 		     <li>Inventaires</li>
 			<ul id="inventaires">
-				<li><a href="/SQL/film.php"/>Films</a></li>
-				<li><a href="/SQL/jeux_video.php"/>Jeux</a></li>
-				<li><a href="/SQL/ouvrage.php"/>Ouvrages</a></li>
-                <li><a href="/formulaires.php">Formulaires</a></li>
+				<li><a href="/BasesDonnees/SQL/film.php"/>Films</a></li>
+				<li><a href="/BasesDonnees/SQL/jeux_video.php"/>Jeux</a></li>
+				<li><a href="/BasesDonnees/SQL/ouvrage.php"/>Ouvrages</a></li>
+                		<li><a href="/BasesDonnees/formulaires.php">Formulaires</a></li>
 			</ul>
 		     <li>Archéologie</li>
 			<ul id="Archeologie">
