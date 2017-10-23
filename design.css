@@ -36,6 +36,14 @@ h2
 p, a {
 }
 
+a {
+	text-decoration: none;
+}
+
+a:visited {
+	text-decoration: none;
+}
+
 strong{
     font-weight: bold;
 }
@@ -64,8 +72,7 @@ header {
 	padding: 0;
 	margin: 0 0 0.002% 0;
 
-	background-color: #686868;
-	opacity: 0.90;
+	background-color: #000;
 
 	display: flex;
 	flex-wrap: nowrap;
@@ -79,14 +86,22 @@ header h1  {
 	font-size: 2.75em;
 	font-variant: small-caps;
 	line-height: 0em;
-    font-color: black;
-    
+	color: #FFF;
 }
 
 #nom-site {
 	flex: 1;
 }
 
+#mon-site a {
+	text-decoration: none;
+	color: #FFF;
+}
+
+#mon-site a:visited  {
+	text-decoration: none;
+	color: #FFF;
+}
 
 #login {
 	display: flex;
@@ -94,25 +109,26 @@ header h1  {
 	flex-direction: row;
 	justify-content: flex-end;
 	align-items: center;
-    padding: 0 0.5% 0 0.5%;
+    	padding: 0 0.5% 0 0.5%;
 }
 
 /*
  * menu-sidebar's structure
  */
 #menu {
-    padding: 0 2% 0 0;
-    margin: 0 2.5% 0 0;
-	background-color: #686868;
-	opacity: 0.90;
+	padding: 0 2% 0 0;
+	margin: 0 2.5% 0 0;
+	background-color: #000;
 }
 
 #menu ul {
     list-style: none;
     padding: 0 0 0 9%;
+    color: #FFF;
 }
 
-#menu li {
+#menu li a {
+	color: #FFF;
 }
 
 #menu #Archeologie li {
@@ -146,7 +162,7 @@ main {
 .accesBD h2 {
     display: block;
     background-color: black;
-    font-color: white;
+    color: #FFF;
     text-align: center;
 }
 
@@ -167,7 +183,7 @@ main {
     border: 1px solid black;
     background-color: black;
     border-radius: 15px;
-    text-color: white; /* à modifier, ne fonctionne pas pour le moment!!! */
+    color: #FFF;
 }
 
 .biblio, .jeuxVideo, .film {
@@ -184,18 +200,25 @@ main {
 
 footer
 {
-	display: block;
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-around;
+	align-items: flex-start;
 	margin: 0 0 0 0;
-	padding: 0.05% 0 0.05% 0;
+	padding: 0.auto;
 	text-align: center;
-	background-color: #686868;
+	background-color: #000;
+	bottom: 0;
+	width: auto;
 }
 
 footer p {
 	font-size: 0.625em;
 	line-height: 0em;
+	color: #FFF; /* White color */
 
 }
+
 
 
 
