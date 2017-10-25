@@ -4,9 +4,9 @@ function enregContact($donnee)
 {
 	try
 	{
-	require($_SERVER['DOCUMENT_ROOT'] . '/ConnectionDB.php');
+	require($_SERVER['DOCUMENT_ROOT'] . '/Login/ConnectionDB.php');
 	$db = ConnectionDB();
-	require($_SERVER['DOCUMENT_ROOT'] . '/contact-verif.php');
+	require($_SERVER['DOCUMENT_ROOT'] . '/Annuaire/verif.php');
 	$data = verificationContact($donnee);
 	$reponse = $db->prepare('INSERT INTO contact (nom, prenom, naissance, mort, batiment, numero_rue, rue, complement, code_postal, ville, cedex, fixe, mobile, mail) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)');
 	echo 'Pouet';

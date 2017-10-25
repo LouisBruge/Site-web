@@ -1,7 +1,7 @@
 <?php
 function annuaireListe()
 {
-	require($_SERVER['DOCUMENT_ROOT'] . '/ConnectionDB.php');
+	require($_SERVER['DOCUMENT_ROOT'] . '/Login/ConnectionDB.php');
 	$db = ConnectionDB();
 
 	try
@@ -17,7 +17,7 @@ function annuaireListe()
 
 	while($donnee = $reponse->fetch())
 	{
-		echo '<tr><td><a href="/annuaire.php?id=' . $donnee['id']. '">' . $donnee['prenom'] . ' ' . $donnee['nom'] . '</a></td>';
+	echo '<tr><td><a href="/Annuaire/annuaire.php?id=' . $donnee['id']. '">' . $donnee['prenom'] . ' ' . $donnee['nom'] . '</a></td>';
 		echo '<td>';
 		if (!empty($donnee['batiment']))
 		{
@@ -61,7 +61,7 @@ function annuaireListe()
 
 function contact($id)
 {
-	require($_SERVER['DOCUMENT_ROOT'] . '/ConnectionDB.php');
+	require($_SERVER['DOCUMENT_ROOT'] . '/Login/ConnectionDB.php');
 	$db = ConnectionDB();
 
 	try
@@ -82,14 +82,14 @@ if (isset($_GET['id']))
 {
 	$id = $_GET['id'];
 	$donnee = contact($id);
-	require($_SERVER['DOCUMENT_ROOT'] . '/MISE_FORME/annuaire.php');
+	require($_SERVER['DOCUMENT_ROOT'] . '/Annuaire/miseForme.php');
 	miseFormeContact($donnee);
 }
 elseif (isset($_POST['nom']) AND isset($_POST['prenom']))
 {
-	require($_SERVER['DOCUMENT_ROOT'] . '/ENREG/annuaire.php');
+	require($_SERVER['DOCUMENT_ROOT'] . '/Annuaire/enreg.php');
 	enregContact($_POST);
-	require($_SERVER['DOCUMENT_ROOT'] . '/MISE_FORME/annuaire.php');
+	require($_SERVER['DOCUMENT_ROOT'] . '/Annuaire/miseForme.php');
 	miseFormeContact($_POST);
 }
 else

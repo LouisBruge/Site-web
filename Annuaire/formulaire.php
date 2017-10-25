@@ -12,7 +12,10 @@
 
 		<p>
 			<section>
-				<form method="post" action="/annuaire.php" id="annuaire">
+
+				<!-- Formulaire d'enregistrement des contacts et des coordonnées de ces derniers -->
+
+				<form method="post" action="/Annuaire/annuaire.php" id="annuaire">
 				<fieldset>
 				<legend> Etat civil </legend>
 					Nom : <input type="text" name="nom" size=60 placeholder="Nom"required /> <br />
