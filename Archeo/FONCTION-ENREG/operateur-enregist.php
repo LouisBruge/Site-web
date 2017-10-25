@@ -15,7 +15,7 @@
 			<h1> Récapitulatif pour l'enregistement des opérateurs en archéologique</h1> <br/>
 
 			<?php
-				require($_SERVER['DOCUMENT_ROOT'] . '/MISE_FORME/tableau.php');
+				require($_SERVER['DOCUMENT_ROOT'] . '/BasesDonnees/MISE_FORME/tableau.php');
 				require($_SERVER['DOCUMENT_ROOT'] . '/Archeo/CONTROLLER/operateur.php');
 				$donnee = ControllerOperateur($_POST);
 
@@ -30,6 +30,7 @@
 		</p>
 		</section>
 	</body>
+	<?php include($_SERVER['DOCUMENT_ROOT'] . '/footer.php'); ?>
 </html>
 
 

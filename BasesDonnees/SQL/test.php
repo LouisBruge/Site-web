@@ -4,7 +4,7 @@
 <head>
 	<title> Recherche </title>
 	<meta charset="utf-8" />
-    	<link rel="stylesheet" media="screen" type="text/css" title="Design" href="../design.css"/>
+    	<link rel="stylesheet" media="screen" type="text/css" title="Design" href="/design.css"/>
 </head>
 <body>
         <?php include($_SERVER['DOCUMENT_ROOT'].'/menu.php'); //ajout du menu dans le texte ?>
@@ -17,9 +17,9 @@ if (isset($_POST['recherche']))
 	$titre = '%' . htmlspecialchars($_POST['recherche']) . '%';
 
 	// liste des fichiers requis pour le fonctionnement de la vue
-	require($_SERVER['DOCUMENT_ROOT'] . '/ConnectionDB.php');
-	require($_SERVER['DOCUMENT_ROOT'] . '/REQUETES/recherche.php');
-	require($_SERVER['DOCUMENT_ROOT'] . '/MISE_FORME/tableau.php');
+	require($_SERVER['DOCUMENT_ROOT'] . '/Login/ConnectionDB.php');
+	require($_SERVER['DOCUMENT_ROOT'] . '/BasesDonnees/REQUETES/recherche.php');
+	require($_SERVER['DOCUMENT_ROOT'] . '/BasesDonnees/MISE_FORME/tableau.php');
 	
 	$db = connectionDB();
 

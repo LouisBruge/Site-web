@@ -25,7 +25,7 @@
 
 <!-- Barre de recherche intégrée dans l'header --!>
 	<div id="barre">
-		<form method="post" action="/SQL/test.php" id="requete">
+		<form method="post" action="/BasesDonnees/SQL/test.php" id="requete">
 			<input type="search" name="recherche" required placeholder="Barre de recherche" />
 			<input type="submit" name="Recherche" /> <br />
 		</form>
