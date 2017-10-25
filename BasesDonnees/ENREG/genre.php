@@ -13,10 +13,10 @@
 		<h1> Récapitulatif de l'enregistrement des genres</h1> <br />
 
 <?php
-	require($_SERVER['DOCUMENT_ROOT'] . '/CONTROLLER/genre.php');
+	require($_SERVER['DOCUMENT_ROOT'] . '/BasesDonnees/CONTROLLER/genre.php');
 	$genre = ControllerGenre($_POST);
 	// retranscription des données envoyées sous la forme d'un tableau
-	require($_SERVER['DOCUMENT_ROOT'] . '/MISE_FORME/tableau.php');
+	require($_SERVER['DOCUMENT_ROOT'] . '/BasesDonnees/MISE_FORME/tableau.php');
 	Tableau_html($genre);
 
 

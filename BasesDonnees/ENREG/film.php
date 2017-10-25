@@ -15,11 +15,11 @@
 <?php
 	// Appel de la fonction ControllerFilm pour vérifier les données transmisses par le formulaire html
 
-	require($_SERVER['DOCUMENT_ROOT'] . '/CONTROLLER/film.php');
+	require($_SERVER['DOCUMENT_ROOT'] . '/BasesDonnees/CONTROLLER/film.php');
 	$film = ControllerFilm($_POST);
 
 	// retranscription des données envoyées sous la forme d'un tableau
-	require($_SERVER['DOCUMENT_ROOT'] . '/MISE_FORME/film.php');
+	require($_SERVER['DOCUMENT_ROOT'] . '/BasesDonnees/MISE_FORME/film.php');
 	MiseFormeFilm($film);
 
 	// Appel de la fonction ConnectionDB pour se connecter au serveur postgresql et à la base de donnée
@@ -42,7 +42,7 @@
 	// récupération de la clé primaire de l'enregistrement pour completer les informations secondaires (genres, supports et propriétaire...)
 	$type_media = "film";
 	$titre = $_POST['titre'];
-	require($_SERVER['DOCUMENT_ROOT']. '/REQUETES/requete_individuelle.php');
+	require($_SERVER['DOCUMENT_ROOT']. '/BasesDonnees/REQUETES/requete_individuelle.php');
 		$id = requete_enreg($db, $titre, $type_media);
 
 

@@ -2,11 +2,11 @@
 	function ajout_donnee_annexe($db, $id, $media)
 	{
 		// listings pour la modification de la fiche
-		require($_SERVER['DOCUMENT_ROOT'] . '/listing_genre.php');
+		require($_SERVER['DOCUMENT_ROOT'] . '/BasesDonnees/listing_genre.php');
 
 		echo '<fieldset>
 			<legend> Ajout de données annexes </legend>';
-		echo '<form method="post" action="/FICHES/' . $media . '.php?id=' . $id . '" id="genre-form">
+		echo '<form method="post" action="/BasesDonnees/FICHES/' . $media . '.php?id=' . $id . '" id="genre-form">
 			<fieldset>
 			<legend> Genre </legend>';
 		listing_genre($db, $media);
@@ -14,7 +14,7 @@
 			</fieldset>
 			</form>';
 
-		echo '<form method="post" action="/FICHES/' . $media . '.php?id=' . $id . '" id="support-form">
+		echo '<form method="post" action="/BasesDonnees/FICHES/' . $media . '.php?id=' . $id . '" id="support-form">
 			<fieldset>
 			<legend> support </legend>';
 		listing_support($db, $media);
@@ -23,7 +23,7 @@
 			</form>';
 
 
-		echo '<form method="post" action="/FICHES/' . $media . '.php?id=' . $id . '" id="proprio-form">
+		echo '<form method="post" action="/BasesDonnees/FICHES/' . $media . '.php?id=' . $id . '" id="proprio-form">
 			<fieldset>
 			<legend> Proprietaire</legend>';
 		listing_proprio($db);
@@ -39,7 +39,7 @@
 
 function form_citation($media, $id)
 	{
-		echo	'<form method="post" action="/FICHES/' . $media . '.php?id=' . $id . '" id="citation">'
+		echo	'<form method="post" action="/BasesDonnees/FICHES/' . $media . '.php?id=' . $id . '" id="citation">'
 ?>
 	<fieldset>
 	<legend> Citation </legend>

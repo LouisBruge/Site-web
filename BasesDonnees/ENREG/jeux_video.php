@@ -14,15 +14,15 @@
 
 <?php
 	// retranscription des données envoyées sous la forme d'un tableau
-	require($_SERVER['DOCUMENT_ROOT'] . '/CONTROLLER/jeux.php');
+	require($_SERVER['DOCUMENT_ROOT'] . '/BasesDonnees/CONTROLLER/jeux.php');
 	$jeux = ControllerJeux($_POST);
 
 	// retranscription des données envoyées sous la forme d'un tableau
-	require($_SERVER['DOCUMENT_ROOT'] . '/MISE_FORME/jeux.php');
+	require($_SERVER['DOCUMENT_ROOT'] . '/BasesDonnees/MISE_FORME/jeux.php');
 	MiseFormeJeux($jeux);
 
 	// Appel de la fonction ConnectionDB pour se connecter au serveur postgresql et à la base de donnée
-	require($_SERVER['DOCUMENT_ROOT'].'/ConnectionDB.php');
+	require($_SERVER['DOCUMENT_ROOT'].'/Login/ConnectionDB.php');
 	$db = ConnectionDB();
 
 	// préparation de la requête
@@ -40,7 +40,7 @@
 	// récupération de la clé primaire de l'enregistrement pour completer les informations secondaires (genres, supports et propriétaire...)
 	$type_media = "jeux";
 	$titre = $_POST['titre'];
-	require($_SERVER['DOCUMENT_ROOT']. '/REQUETES/requete_individuelle.php');
+	require($_SERVER['DOCUMENT_ROOT']. '/BasesDonnees/REQUETES/requete_individuelle.php');
 		$id = requete_enreg($db, $titre, $type_media);
 
 	echo "CLEF : " . $id . '<br />';

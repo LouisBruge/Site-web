@@ -15,15 +15,15 @@
 <?php
 
 	// Controle des données transmises par le formulaire Html
-	require($_SERVER['DOCUMENT_ROOT'] . '/CONTROLLER/ouvrage.php');
+	require($_SERVER['DOCUMENT_ROOT'] . '/BasesDonnees/CONTROLLER/ouvrage.php');
 	$ouvrage = ControllerOuvrage($_POST);
 
 	// retranscription des données envoyées sous la forme d'un tableau
-	require($_SERVER['DOCUMENT_ROOT'] . '/MISE_FORME/ouvrage.php');
+	require($_SERVER['DOCUMENT_ROOT'] . '/BasesDonnees/MISE_FORME/ouvrage.php');
 	MiseFormeOuvrage($ouvrage);
 
 	// Appel de la fonction ConnectionDB pour se connecter au serveur postgresql et à la base de donnée
-	require($_SERVER['DOCUMENT_ROOT'].'/ConnectionDB.php');
+	require($_SERVER['DOCUMENT_ROOT'].'/Login/ConnectionDB.php');
 	$db = ConnectionDB();
 
 	try
@@ -50,7 +50,7 @@
 	$type_media = "ouvrage";
 	$titre = $_POST['titre'];
 	// récupération de la clé primaire de l'enregistrement pour completer les informations secondaires (genres, supports et propriétaire...)
-	require($_SERVER['DOCUMENT_ROOT']. '/REQUETES/requete_individuelle.php');
+	require($_SERVER['DOCUMENT_ROOT']. '/BasesDonnees/REQUETES/requete_individuelle.php');
 		$id = requete_enreg($db, $titre, $type_media);
 
 	echo "CLEF : " . $id . '<br />';

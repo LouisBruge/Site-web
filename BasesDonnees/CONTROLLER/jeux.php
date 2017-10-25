@@ -2,7 +2,7 @@
 
 	function ControllerJeux($donnee)
 	{
-		require($_SERVER['DOCUMENT_ROOT'] . '/CONTROLLER/generique.php');
+		require($_SERVER['DOCUMENT_ROOT'] . '/BasesDonnees/CONTROLLER/generique.php');
 		$donnee['titre'] = ControllerTitre($donnee['titre']);
 		$donnee['editeur'] = ControllerText($donnee['editeur'], 'éditeur');
 		$donnee['plateforme'] = ControllerPlateforme($donnee['plateforme']);

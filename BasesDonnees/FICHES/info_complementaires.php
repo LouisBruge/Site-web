@@ -1,10 +1,10 @@
 <?php
 		// listings pour la modification de la fiche
-		require($_SERVER['DOCUMENT_ROOT'] . '/MISE_FORME/donnees_annexes_ajout.php');
+		require($_SERVER['DOCUMENT_ROOT'] . '/BasesDonnees/MISE_FORME/donnees_annexes_ajout.php');
 		ajout_donnee_annexe($db, $id, $media);
 
 		// enregistrement des données annexes
-		require($_SERVER['DOCUMENT_ROOT'] . '/ENREG/info_complementaires.php');
+		require($_SERVER['DOCUMENT_ROOT'] . '/BasesDonnees/ENREG/info_complementaires.php');
 		if (isset($_POST['genre']))
 		{
 			enreg_genre($db, $media, $_POST['genre'], $id);

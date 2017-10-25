@@ -9,15 +9,15 @@
 
 	<body>
 		<?php include($_SERVER['DOCUMENT_ROOT'].'/menu.php');
-			require($_SERVER['DOCUMENT_ROOT'].'/ConnectionDB.php');
-			require($_SERVER['DOCUMENT_ROOT'].'/listing_genre.php'); // accés au fichier pour la génération des listes déroulantes (genre, support et proprio)
+			require($_SERVER['DOCUMENT_ROOT'].'/Login/ConnectionDB.php');
+			require($_SERVER['DOCUMENT_ROOT'].'/BasesDonnees/listing_genre.php'); // accés au fichier pour la génération des listes déroulantes (genre, support et proprio)
 			$db = ConnectionDB(); // connection au serveur de base de donnée
 		 ?>
 
 		<p>
 		<section>
 		<!-- mise en forme du formulaire d'enregistrement des ouvrages -->
- 	       	<form method="post" action="ENREG/ouvrage.php" id="monographie">
+ 	       	<form method="post" action="/BasesDonnees/ENREG/ouvrage.php" id="monographie">
         	<fieldset>
         	<legend> Ouvrage </legend>
         	Auteur(s) : <input type="text" name="auteur" size=60 required/> <br/>
@@ -35,7 +35,7 @@
        		</form>
 
 		<!-- mise en forme du formulaire d'enregistrement des films -->
-		<form method="post" action="ENREG/film.php" id="film">
+		<form method="post" action="/BasesDonnees/ENREG/film.php" id="film">
 		<fieldset>
 		<legend> Films </legend>
 		Titre : <input type="text" name="titre" required/> <br />
@@ -52,7 +52,7 @@
 		</form>
 
 		<!-- mise en forme du formulaire d'enregistrement des jeux -->
-		<form method="post" action="ENREG/jeux_video.php" id="jeux_video">
+		<form method="post" action="/BasesDonnees/ENREG/jeux_video.php" id="jeux_video">
 		<fieldset>
 		<legend> Jeux </legend>
 		Titre : <input type="text" name="titre"  required /> <br />
@@ -75,7 +75,7 @@
 		</form>
 
 		<!-- mise en forme du formulaire d'enregistrement des genres -->
-		<form method="post" action="ENREG/genre.php" id="genre">
+		<form method="post" action="/BasesDonnees/ENREG/genre.php" id="genre">
 		<fieldset>
 		<legend> Genre </legend>
 		Nom : <input type="text" name="nom" required /> <br />

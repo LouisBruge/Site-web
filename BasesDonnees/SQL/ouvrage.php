@@ -19,7 +19,7 @@
 	   <th> Liens </th> <tr>
 <?php
 	// Appel de la fonction ConnectionDB pour se connecter au serveur postgresql et à la base de donnée
-	require($_SERVER['DOCUMENT_ROOT'].'/ConnectionDB.php');
+	require($_SERVER['DOCUMENT_ROOT'].'/Login/ConnectionDB.php');
 	$db = ConnectionDB();
 
 // Selection des donnees
@@ -37,7 +37,7 @@ while ($donnee = $reponse->fetch())
         <td><cite> ' . $donnee['titre'] . '</cite></td>
         <td> ' . $donnee['editeur'] . '</td>
         <td> ' . $donnee['date'] . '</td>
-	<td><a href="/FICHES/ouvrage.php?id=' . $donnee['id'] . '">fiche</a></td></tr>';
+	<td><a href="/BasesDonnees/FICHES/ouvrage.php?id=' . $donnee['id'] . '">fiche</a></td></tr>';
 }
 ?> </table>
 <?php

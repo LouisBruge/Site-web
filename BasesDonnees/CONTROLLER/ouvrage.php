@@ -2,7 +2,7 @@
 
 	function ControllerOuvrage($donnee)
 	{
-		require($_SERVER['DOCUMENT_ROOT'] . '/CONTROLLER/generique.php');
+		require($_SERVER['DOCUMENT_ROOT'] . '/BasesDonnees/CONTROLLER/generique.php');
 		$donnee['titre'] = ControllerTitre($donnee['titre']);
 		$donnee['auteur'] = ControllerText($donnee['auteur'], 'auteur');
 		$donnee['editeur'] = ControllerText($donnee['editeur'], 'éditeur');
