@@ -21,9 +21,10 @@
 
 
 	try{
-	// ouverture de la base de donnée
-	$db = new PDO("pgsql:dbname=biblio;host=localhost", "louis", "@m19l5tt5");
-
+	// Appel de la fonction ConnectionDB pour se connecter au serveur postgresql et à la base de donnée
+	require($_SERVER['DOCUMENT_ROOT'].'/ConnectionDB.php');
+	$db = ConnectionDB();
+    
 	// préparation de la requête
 	$req = $db->prepare('INSERT INTO genre (nom, abreviation, film, ouvrage, jeux) VALUES (?, ?, ?, ?, ?)');
 
