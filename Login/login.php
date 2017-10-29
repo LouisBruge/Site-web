@@ -37,6 +37,8 @@ session_start(); ?>
 ?>
 	<h1> Page de membre </h1>
 	Bienvenue, <?php echo $_SESSION['login']; ?>, au sein du serveur domestique <br />
+	Ce dernier est dédié aux bases de données bibliographiques, vidéoludiques et filmographiques. <br />
+	<br />
 	Pour se déconnecter, merci de cliquer sur ce <a href="deconnexion.php"> lien </a> <br />
 <?php
 				}
