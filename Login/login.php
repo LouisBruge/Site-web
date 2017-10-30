@@ -39,6 +39,11 @@ session_start(); ?>
 	Bienvenue, <?php echo $_SESSION['login']; ?>, au sein du serveur domestique <br />
 	Ce dernier est dédié aux bases de données bibliographiques, vidéoludiques et filmographiques. <br />
 	<br />
+
+	<?php 
+		require($_SERVER['DOCUMENT_ROOT'] . '/Annuaire/anniversaire.php');
+			anniversaire_mois();
+	?>
 	Pour se déconnecter, merci de cliquer sur ce <a href="deconnexion.php"> lien </a> <br />
 <?php
 				}
