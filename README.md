@@ -5,14 +5,20 @@ The goal of this project is to propose a web interface for PostgreSQL Database, 
 The project is develloped during my free time.
 
 
-SOME FEATURES 
-=============
+SOME FEATURES INCLUDED
+======================
 
-* Database of books
-* Database of movies
-* Database of video game
+    * Database of books
+    * Database of movies
+    * Database of video game
 
-* list of contact
-* Birthday
+    * List of contact
+    * Birthday
 
+    * List of professional contacts
+    * Candidatures
 
+SOME FEATURES NOT INCLUDED YET
+=============================
+
+    * Editing data
