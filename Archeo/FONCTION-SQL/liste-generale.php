@@ -23,7 +23,7 @@ function ListeCandidature()
 		while ($donnee = $reponse->fetch())
 		{
 			echo '<tr><td> <a href="/Archeo/fiche/candidature.php?id=' . $donnee['id'] .'">' . $donnee['id'] . '</td>
-				<td>' . $donnee['date'] . '</td>
+				<td>' . date('d/m/y', strtotime($donnee['date'])) . '</td> 
 				<td>' . $donnee['n_annonce'] . '</td>
 				<td>' . $donnee['operateur'] . '</td>
 				<td>' . $donnee['prenom'] . ' ' . $donnee['nom'] . '</td>

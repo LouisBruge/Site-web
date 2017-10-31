@@ -222,7 +222,7 @@
 		echo '<ul id="candidature">';
 		while ( $candidature= $reponse->fetch(PDO::FETCH_ASSOC))
 			{
-			echo '<li> ' . $candidature['date_envoi'] . ' : ' . $candidature['poste'] . ' par ' . $candidature['support'] . ' à ' . $candidature['prenom'] . ' ' . $candidature['nom'] . '</li> ' ; 
+			echo '<li> ' . date('d/m/Y', strtotime($candidature['date_envoi'])) . ' : ' . $candidature['poste'] . ' par ' . $candidature['support'] . ' à ' . $candidature['prenom'] . ' ' . $candidature['nom'] . '</li> ' ; 
 			}
 		echo '</ul>';
 		$reponse->closeCursor();
@@ -276,7 +276,7 @@
 
 			$candidature= $reponse->fetch(PDO::FETCH_ASSOC);
 			
-			echo 'Date d\'envoi : ' . $candidature['date_envoi'] . '<br />';
+			echo 'Date d\'envoi : ' . date('d/m/Y', strtotime($candidature['date_envoi'])) . '<br />';
 			echo ' Poste  : ' . $candidature['poste'];
 			if(!empty($candidature['n_annonce']))
 			{

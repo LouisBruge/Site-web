@@ -15,7 +15,7 @@ function anniversaire_mois()
 	while($donnee = $reponse->fetch())
 	{
 		echo '<tr><td><a href="/Annuaire/annuaire.php?id=' . $donnee['id'] . '">' . $donnee['prenom'] . ' ' . $donnee['nom'] . '</a></td>';
-        echo '<td> Né le : ' . $donnee['naissance'] . '</td>';
+        echo '<td> Né le : ' . date('d/m/Y', strtotime($donnee['naissance'])) . '</td>';
         echo '<td>' . $donnee['age'] . ' ans</td></tr>';
 	}
 

@@ -4,10 +4,10 @@ function miseFormeContact($donnee)
 {
 	echo '<h1> ' . $donnee['prenom'] . ' ' . $donnee['nom'] . '</h1>';
 	echo '<h2> État civil </h2>';
-	echo '<p> Date de naissance : ' . $donnee['naissance'] ;
+	echo '<p> Date de naissance : ' . date('d/m/Y', strtotime($donnee['naissance'])) ; // convertie la date de mois-jour-année en JJ/DD/YYYY, plus lisible en Français
 	if (!empty($donnee['mort']))
 	{
-		echo 'Date de mort : ' .$donnee['mort'] . '<br />';
+		echo 'Date de mort : ' . date('d/m/Y', strtotime($donnee['mort'])) . '<br />';
 	}
 	else
 	{
