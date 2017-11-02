@@ -21,10 +21,8 @@ session_start(); ?>
 							$passwd = htmlspecialchars($_POST['password']);
 							$db = new PDO("pgsql:dbname=biblio;host=localhost", $login, $passwd);
 							$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-							echo 'Connexion à la base de donnée : OK';
 							$_SESSION['login'] = htmlspecialchars($_POST['login']);
 							$_SESSION['password'] = htmlspecialchars($_POST['password']);
-							echo '<br /> Bonjour à toi, ' . $_SESSION['login'];
 						}
 						catch(PDOEXception $e)
 						{
@@ -32,22 +30,51 @@ session_start(); ?>
 						};
 						return($db);
 				}
-				elseif(isset($_SESSION['login']))
-				{
 ?>
 	<h1> Page de membre </h1>
 	Bienvenue, <?php echo $_SESSION['login']; ?>, au sein du serveur domestique <br />
 	Ce dernier est dédié aux bases de données bibliographiques, vidéoludiques et filmographiques. <br />
 	<br />
 
+	<section class="accesDB">
+                <div class="biblio">
+				    <h2>Base Bibliographique</h2>
+				    <p>
+                        <ul>
+                            <li><a href="/BasesDonnees/SQL/ouvrage.php">Base de Donnée</a><br/></li>
+				    	    <li><a href="/BasesDonnees/formulaires.php#monographie">Formulaires d'enregistrement</a><br/></li>
+                        </lu>
+				    </p>
+                </div>
+
+
+                <div class="jeuxVideo">
+				    <h2> Base Vidéoludique </h2>
+				    <p>
+                        <ul>
+					        <li><a href="/BasesDonnees/SQL/jeux_video.php">Base de Donnée</a><br/></li>
+					        <li><a href="/BasesDonnees/formulaires.php#jeux_video">Formulaires d'enregistrement</a><br /></li>
+                        </ul>
+				    </p>
+                </div>
+
+                <div class="film">
+				    <h2> Base Filmographique </h2>
+				    <p>
+                        <ul>
+					        <li><a href="/BasesDonnees/SQL/film.php">Base de Donnée</a><br/></li>
+    					    <li><a href="/BasesDonnees/formulaires.php#film">Formulaires d'enregistrement</a><br /></li>
+                        </ul>
+				    </p>
+                </div>
+                </section>
+		<section>
+
 	<?php 
 		require($_SERVER['DOCUMENT_ROOT'] . '/Annuaire/anniversaire.php');
 			anniversaire_mois();
 	?>
 	Pour se déconnecter, merci de cliquer sur ce <a href="deconnexion.php"> lien </a> <br />
-<?php
-				}
-			?>
 		</section>
 	</p>
 
