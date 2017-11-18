@@ -21,19 +21,14 @@ session_start(); ?>
 							$passwd = htmlspecialchars($_POST['password']);
 							$db = new PDO("pgsql:dbname=biblio;host=localhost", $login, $passwd);
 							$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-							echo 'Connexion à la base de donnée : OK';
 							$_SESSION['login'] = htmlspecialchars($_POST['login']);
 							$_SESSION['password'] = htmlspecialchars($_POST['password']);
-							echo '<br /> Bonjour à toi, ' . $_SESSION['login'];
 						}
 						catch(PDOEXception $e)
 						{
 							echo 'Echec : ' . $e->getMessage();
 						};
-						return($db);
 				}
-				elseif(isset($_SESSION['login']))
-				{
 ?>
 	<h1> Page de membre </h1>
 	Bienvenue, <?php echo $_SESSION['login']; ?>, au sein du serveur domestique <br />
@@ -45,9 +40,6 @@ session_start(); ?>
 			anniversaire_mois();
 	?>
 	Pour se déconnecter, merci de cliquer sur ce <a href="deconnexion.php"> lien </a> <br />
-<?php
-				}
-			?>
 		</section>
 	</p>
 
