@@ -28,7 +28,6 @@ session_start(); ?>
 						{
 							echo 'Echec : ' . $e->getMessage();
 						};
-						return($db);
 				}
 ?>
 	<h1> Page de membre </h1>
