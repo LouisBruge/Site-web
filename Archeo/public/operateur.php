@@ -14,7 +14,7 @@
 	<?php
 	if (isset($_GET['id']))
 	{
-		require($_SERVER['DOCUMENT_ROOT'] . '/Archeo/FONCTION-SQL/get.php');
+		require( __DIR__ . '/../app/src/MODELE/get.php');
 
 		// affichage des donnes de l'opérateur
 		GetOperateur($_GET['id']);
@@ -37,14 +37,14 @@
 	
 	
 
-		require($_SERVER['DOCUMENT_ROOT'] . '/Archeo/FORMULAIRE/notes.php'); 
-		require($_SERVER['DOCUMENT_ROOT'] . '/Archeo/FORMULAIRE/contact.php'); 
-		require($_SERVER['DOCUMENT_ROOT'] . '/Archeo/FORMULAIRE/candidature.php'); 
-		require($_SERVER['DOCUMENT_ROOT'] . '/Archeo/FORMULAIRE/arrete.php'); 
+		require( __DIR__ . '/../app/view/notes.php'); 
+		require( __DIR__ . '/../app/view/contact.php'); 
+		require( __DIR__ . '/../app/view/candidature.php'); 
+		require( __DIR__ . '/../app/view/arrete.php'); 
 	}
 	else
 	{
-		require($_SERVER['DOCUMENT_ROOT'] . '/Archeo/FONCTION-SQL/liste-generale.php');
+		require( __DIR__ . '/../app/src/MODELE/liste-generale.php');
 		ListeOperateur() ;
 	}
 ?>
