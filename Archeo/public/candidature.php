@@ -34,7 +34,7 @@
 	}
 	else
 	{
-		require(__DIR__ . '/../app/view/liste-generale.php');
+		require(__DIR__ . '/../app/src/MODELE/liste-generale.php');
 		ListeCandidature() ;
 	}
 ?>
