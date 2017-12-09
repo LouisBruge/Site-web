@@ -10,12 +10,12 @@
         <?php include($_SERVER['DOCUMENT_ROOT'].'/menu.php'); //ajout du menu dans le texte ?>
         <p>
 	<section>
-	<?php require($_SERVER['DOCUMENT_ROOT'] . '/Archeo/FONCTION-SQL/get.php'); ?>
+	<?php require( __DIR__ . '/../app/src/MODELE/get.php'); ?>
 
-	<?php require($_SERVER['DOCUMENT_ROOT'] . '/Archeo/FORMULAIRE/operateur.php'); ?>
-	<?php require($_SERVER['DOCUMENT_ROOT'] . '/Archeo/FORMULAIRE/candidature.php'); ?>
-	<?php require($_SERVER['DOCUMENT_ROOT'] . '/Archeo/FORMULAIRE/arrete.php'); ?>
-	<?php require($_SERVER['DOCUMENT_ROOT'] . '/Archeo/FORMULAIRE/contact.php'); ?>
+	<?php require(__DIR__ . '/../app/view/operateur.php'); ?>
+	<?php require(__DIR__ . '/../app/view/candidature.php'); ?>
+	<?php require(__DIR__ . '/../app/view/arrete.php'); ?>
+	<?php require(__DIR__ . '/../app/view/contact.php'); ?>
 	</section>
        </p>
 </main>
