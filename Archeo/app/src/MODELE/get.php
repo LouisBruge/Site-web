@@ -1,7 +1,7 @@
 <?php
 
-	require($_SERVER['DOCUMENT_ROOT'] . '/Archeo/connectiondb.php');
-	require($_SERVER['DOCUMENT_ROOT'] . '/Archeo/mise_forme.php');
+	require( __DIR__ . '/../connectiondb.php');
+	require(__DIR__ . '/../../view/mise_forme.php');
 
 
 	function ListeOperateur()

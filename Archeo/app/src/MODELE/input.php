@@ -1,6 +1,7 @@
 <?php
 	
-require($_SERVER['DOCUMENT_ROOT'] . '/Archeo/connectiondb.php');
+
+	require( __DIR__ . '/../connectiondb.php');
 
 function InputNotes($valeur)
 {
@@ -51,7 +52,7 @@ function InputArrete($valeur)
 
 function InputCandidature($valeur)
 {
-	require($_SERVER['DOCUMENT_ROOT'] . '/Archeo/CONTROLLER/candidature.php');
+	require( __DIR__ . '/../CONTROLLER/candidature.php');
 	controllerCandidature($valeur);
 
 	$conn = connectiondb();

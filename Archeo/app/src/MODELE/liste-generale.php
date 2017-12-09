@@ -1,7 +1,7 @@
 <?php
 
-require($_SERVER['DOCUMENT_ROOT'] . '/Archeo/connectiondb.php');
 
+	require( __DIR__ . '/../connectiondb.php');
 
 function ListeCandidature()
 {
