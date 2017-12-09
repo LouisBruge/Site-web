@@ -16,7 +16,7 @@
 <?php
 	if(isset($_GET['id']))
 	{
-		require($_SERVER['DOCUMENT_ROOT'] . '/Archeo/FONCTION-SQL/get.php');
+		require( __DIR__ . '/../app/src/MODELE/get.php');
 		$valeur = GetCandidatureUnique($_GET['id']); // affichage des informations liées à la candidature et récupération de l'id de l'opérateur
 ?>
 
@@ -30,11 +30,11 @@
 <?php
 		GetContactsUnique($valeur['contact']);
 
-		require($_SERVER['DOCUMENT_ROOT'] . '/Archeo/FORMULAIRE/candidature-update.php');
+		require(__DIR__ . '/../app/view/candidature-update.php');
 	}
 	else
 	{
-		require($_SERVER['DOCUMENT_ROOT'] . '/Archeo/FONCTION-SQL/liste-generale.php');
+		require(__DIR__ . '/../app/view/liste-generale.php');
 		ListeCandidature() ;
 	}
 ?>
