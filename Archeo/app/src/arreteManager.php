@@ -64,19 +64,19 @@ Class arreteManager {
 	{
 		$id = (int) $id;
 
-		$q = $this->_db->prepare('SELECT id_operateur AS operateur, annee, fouille, diagnostic, paleolithique, neolithique, protohistoire, romain, medieval, moderne, contemporain FROM arrete WHERE id = :id');
+		$q = $this->_db->prepare('SELECT id, id_operateur AS operateur, annee, fouille, diagnostic, paleolithique, neolithique, protohistoire, romain, medieval, moderne, contemporain FROM arrete WHERE id = :id');
 		$q->bindParam(':id', $id, PDO::PARAM_INT);
 
 		$q->execute();
 
-		return new($q -> fetch(PDO::FETCH_ASSOC));
+		return new arrete ($q -> fetch(PDO::FETCH_ASSOC));
 	}
 
 	public function getList()
 	{
 		$arretes = [];
 
-		$q = $this->_db->query('SELECT id_operateur AS operateur, annee, fouille, diagnostic, paleolithique, neolithique, protohistoire, romain, medieval, moderne, contemporain FROM arrete ORDER BY annee');
+		$q = $this->_db->query('SELECT id, id_operateur AS operateur, annee, fouille, diagnostic, paleolithique, neolithique, protohistoire, romain, medieval, moderne, contemporain FROM arrete ORDER BY annee');
 
 		while($donnees = $q->fetch(PDO::FETCH_ASSOC))
 		{
