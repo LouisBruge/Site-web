@@ -4,10 +4,8 @@
 	require __DIR__ . '/../contactManager.php';
 	require __DIR__ .  '/../contact.php';
 
-	$user = 'louis';
-	$password = '@m19l5tt5';
 
-	$db = new PDO("pgsql:dbname=biblio;host=localhost", $user, $password);
+	$db = ConnectionDB();
 
 
 	$manager = new contactManager($db);
