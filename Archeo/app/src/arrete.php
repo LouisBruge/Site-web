@@ -4,7 +4,6 @@ Class arrete {
 	private $_id,
 		$_operateur,
 		$_paleolithique,
-		$_mesolithique,
 		$_neolithique,
 		$_protohistoire,
 		$_romain,
@@ -48,11 +47,6 @@ Class arrete {
 	public function paleolithique()
 	{
 		return $this->_paleolithique;
-	}
-
-	public function mesolithique()
-	{
-		return $this->_mesolithique;
 	}
 
 	public function neolithique()
@@ -99,11 +93,6 @@ Class arrete {
 	public function setPaleolithique($paleolithique)
 	{
 		$this->_paleolithique= $paleolithique;
-	}
-
-	public function setMesolithique($mesolithique)
-	{
-		$this->_mesolithique= $mesolithique;
 	}
 
 	public function setNeolithique($neolithique)
