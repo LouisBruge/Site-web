@@ -11,6 +11,8 @@ class contactManager
 		$this->setDb($db);
 	}
 
+
+	// Fonction CRUD standarts
 	public function create(Contact $contact)
 	{
 		$q = $this->_db->prepare('INSERT INTO contact (nom, prenom, naissance, mort) VALUES( :nom, :prenom, :naissance, :mort);');
@@ -67,6 +69,21 @@ class contactManager
 	public function setDb($db)
 	{
 		$this->_db = $db;
+	}
+
+	public function annivMois()
+	{
+		$contacts = [];
+
+		$q = $this->_db->query("SELECT id, nom, prenom, naissance FROM contact WHERE date_part('month', naissance) = date_part('month', current_date);");
+
+		// boucle d'inclusion dans le tableau contacts
+		while($donnees = $q->fetch(PDO::FETCH_ASSOC))
+		{
+			$contacts[] = new Contact($donnees);
+		}
+
+		return $contacts;
 	}
 
 
