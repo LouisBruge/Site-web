@@ -63,6 +63,10 @@ class contact
 
 
 	// Setters
+	public function setId($id)
+	{
+		$this -> _id = $id;
+	}
 
 	public function setNom($nom)
 	{
