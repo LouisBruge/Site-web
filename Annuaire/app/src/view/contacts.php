@@ -14,10 +14,18 @@
 
 	//print_r($contacts);
 
+	echo '<table id="contacts"> <tr> <th> ID </th> <th> Contacts </th> <th> Date de Naissance </th></tr>';
+
 	foreach ($contacts as $contact)
 	{
-		echo '<p> ' . $contact->id() . ' : <strong>' . $contact->nom() . '</strong> ' . $contact->prenom() . '<p><br />';
+		echo '<tr>';
+		echo '<td> ' . $contact->id() . ' </td>';
+		echo '<td> <strong>' . $contact->nom() . '</strong> '. $contact->prenom() . '</td>';
+		echo '<td>' . date('d / m / Y', strtotime($contact->naissance())) . '</td>'; // conversion de la date au format européen
+		echo '</tr>';
 	}
+	
+	echo '</table>';
 
 
 ?>

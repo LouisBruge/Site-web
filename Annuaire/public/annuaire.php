@@ -11,7 +11,7 @@
 	<body>
 		<?php include($_SERVER['DOCUMENT_ROOT'] . '/menu.php') ; ?>
 		<section>
-			<?php require(__DIR__ . '/../app/view/contact.php'); ?>
+			<?php require(__DIR__ . '/../app/src/view/contacts.php'); ?>
 		</section>
 </main>
 </body>
