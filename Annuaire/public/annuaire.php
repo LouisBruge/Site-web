@@ -11,9 +11,7 @@
 	<body>
 		<?php include($_SERVER['DOCUMENT_ROOT'] . '/menu.php') ; ?>
 		<section>
-
-			<h1> Annuaire téléphonique </h1>
-			<?php require('../app/src/controller.php'); ?>
+			<?php require(__DIR__ . '/../app/view/contact.php'); ?>
 		</section>
 </main>
 </body>

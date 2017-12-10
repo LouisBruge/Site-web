@@ -4,6 +4,7 @@ class contact
 
 
 	// liste des variables
+	private $_id;
 	private $_nom;
 	private $_prenom;
 	private $_naissance;
@@ -35,6 +36,11 @@ class contact
 
 	
 	// Accessors
+	public function id()
+	{
+		return $this -> _id;
+	}
+
 	public function nom()
 	{
 		return $this -> _nom;
@@ -54,6 +60,7 @@ class contact
 	{
 		return $this -> _mort;
 	}
+
 
 	// Setters
 
