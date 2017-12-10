@@ -53,7 +53,7 @@ class operateurManager
 	{
 		$id = (int) $id;
 
-		$q= $db->prepare('SELECT id, nom_operateur AS operateur, abrev, secteur, statut_juridique, activite, siren, service, batiment, numero_siege, addresse, complement_addresse, code_postal, ville, code_cedex, mail, web, telephone, date_creation, historique FROM operateur WHERE id = :id');
+		$q= $this->_db->prepare('SELECT id, nom_operateur AS operateur, abrev, secteur, statut_juridique, activite, siren, service, batiment, numero_siege, addresse, complement_addresse, code_postal, ville, code_cedex, mail, web, telephone, date_creation, historique FROM operateur WHERE id = :id');
 		$q->bindParam(':id', $id, PDO::PARAM_INT);
 		$q->execute();
 		return new Operateur($q->fetch(PDO::FETCH_ASSOC));

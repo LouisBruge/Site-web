@@ -46,7 +46,7 @@ class Operateur
 			
 			if (method_exists($this, $method))
 			{
-				$this->method($value);
+				$this->$method($value);
 			}
 		}
 	}
