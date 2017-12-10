@@ -50,7 +50,7 @@ Class candidatureManager
 	{
 		$candidatures = [];
 		
-		$q = $this->_db->query('SELECT id, id_operateur AS operateur, id_contact AS contact, poste, spontannee, date_envoi, n_annonce FROM candidature ORDER_BY date_envoi ');
+		$q = $this->_db->query('SELECT id, id_operateur AS operateur, id_contact AS contact, poste, spontannee, date_envoi, n_annonce FROM candidature ORDER BY date_envoi ');
 
 
 		while($donnees = $q->fetch(PDO::FETCH_ASSOC))
