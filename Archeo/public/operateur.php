@@ -11,7 +11,15 @@
 <p>
 	<section>
 
-	<?php require( __DIR__ . '/../app/view/operateurs.php');
+<?php
+	if (isset($_GET['id']))
+	{
+		require( __DIR__ . '/../app/view/operateur.php');
+	}
+	else
+	{
+		require( __DIR__ . '/../app/view/operateurs.php');
+	}
 ?>
 	</section>
 </p>

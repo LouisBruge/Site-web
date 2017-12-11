@@ -22,7 +22,7 @@
 <?php
 	foreach($listOperateur as $operateur)
 	{
-		echo '<tr><td><a href="/Archeo/fiche/operateur.php?id=' . $operateur->id() . '"> ' . $operateur->id() . '</td>
+		echo '<tr><td><a href="/Archeo/public/operateur.php?id=' . $operateur->id() . '"> ' . $operateur->id() . '</td>
 			<td>' . $operateur-> abrev() . '</td>
 			<td>' . $operateur->operateur() . '</td>
 			<td>' . $operateur->ville(). '</td></tr>' ;
