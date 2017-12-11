@@ -5,7 +5,7 @@
 	require $_SERVER['DOCUMENT_ROOT'] . '/Archeo/app/src/connectiondb.php';
 
 	// paramètres de connexion
-	$db = connectiondb();
+	$db = new PDO('pgsql:host=localhost;dbname=archeo', 'louis', '@m19l5tt5');
 
 	// génération de la liste
 	$manager = new candidatureManager($db);
@@ -19,10 +19,7 @@
 		<th> Date </th>
 		<th> Numéro d'annonce </th>
 		<th> Opérateur </th>
-		<th> Contact </th>
 		<th> poste </th>
-		<th> réponse </th> 
-		<th> Commentaire </th>
 		<tr>
 
 <?php
@@ -30,14 +27,11 @@
 	foreach($listCandidature as $candidature)
 	{
 		echo '<tr><td> <a href="/Archeo/public/candidature.php?id=' . $candidature->id() .'">' . $candidature->id() . '</td>
-				<td>' . date('d/m/y', strtotime($candidature->date())) . '</td> 
 				<td>' . $candidature->n_annonce() . '</td>
+				<td>' . date('d/m/y', strtotime($candidature->date_envoi())) . '</td> 
 				<td>' . $candidature->operateur() . '</td>
-				<td>' . $candidature->prenom() . ' ' . $candidature->nom() . '</td>
 				<td>' . $candidature->poste() . '</td>
-				<td>' . $candidature->reponse() . '</td>
-				<td>' . $candidature->type_rep() . '</td></tr>' ;
-
+				</tr>' ;
 	}
 
 
