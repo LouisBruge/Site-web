@@ -27,8 +27,8 @@
 	foreach($listCandidature as $candidature)
 	{
 		echo '<tr><td> <a href="/Archeo/public/candidature.php?id=' . $candidature->id() .'">' . $candidature->id() . '</td>
-				<td>' . $candidature->n_annonce() . '</td>
 				<td>' . date('d/m/y', strtotime($candidature->date_envoi())) . '</td> 
+				<td>' . $candidature->n_annonce() . '</td>
 				<td>' . $candidature->operateur() . '</td>
 				<td>' . $candidature->poste() . '</td>
 				</tr>' ;
