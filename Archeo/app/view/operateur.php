@@ -1,30 +1,48 @@
-<!-- formulaire pour les opérateurs en archéologie -->
-	<form method="post" action="/Archeo/FONCTION-ENREG/operateur-enregist.php" id="operateur">
-	<h2> Enregistrement des opérateurs archéologiques </h2>
-	<fieldset>
-	<legend> Administratif </legend>
-	Nom : <input type="text" name="operateur" /> <br />
-		Abréviation : <input type="text" name="abrev"  /> Activité : <input type="text" name="activite" /> <br />
-		Secteur :  <input type="radio" name="secteur" value="public" id="public" checked="checked" /><label for="public">oui</label> <input type="radio" name="secteur" value="prive" id="prive" /><label for="prive">privé</label> <br />
-		Statut : <input type="text" name="statut_juridique" size='10'/> Siren/Siret : <input type='number' name='siren'/> <br />
-		Date de création : <input type="number" name="date_creation" /> <br />
-		Nbre personnel : <input type="number" name="personnel_min" placeholder="min" size='3'/> <input type="number" name="personnel_max" placeholder="max" size='3'/>
-	</fieldset>
+<?php
 
-	<fieldset>
-	<legend> Coordonnées </legend>
+	require $_SERVER['DOCUMENT_ROOT'] . '/Archeo/app/src/controller/operateur.php';
+	require $_SERVER['DOCUMENT_ROOT'] . '/Archeo/app/src/modele/operateurManager.php';
+	require $_SERVER['DOCUMENT_ROOT'] . '/Archeo/app/src/connectiondb.php';
 
-<!-- Enregistrement des coordonnées de l'opérateur -->
-		Nom de l'opérateur : <input type="text" name="service" /> Bâtiment : <input type="text" name="batiment" /> <br />
-		N<sup>o</sup> : <input type="text" name="numero_siege"/> Rue/Voie : <input type="text" name="addresse" /><br />
-		Complement : <input type="text" name="complement_addresse"/> Boite : <input type="number" name="boite_postale" /> <br />
-		Code : <input type="number" name="code_postal" /> Ville : <input type="text" name="ville" /> CEDEX : <input type="text" name="cedex" placeholder="CEDEX" /> Dept. : <input type="text" name="departement" /> Reg. : <input type="text" name="region" /><br />
-		mail : <input type="email" name="mail" />
-		Site Web : <input type="url" name="web" />
-		Téléphone : <input type='tel' name="telephone" /> <br />
+	// paramètres de connexion
+	$db = connectiondb();
 
-	</fieldset>
-       <input type="submit" name="validation" /><br/>
-       </form>
+	// génération de la liste
+	$manager = new operateurManager($db);
+	
+	//Transformation de la variable $_GET['id'] en $id
+	$id = (int) $_GET['id'];
+
+	// Envoi de la requête
+	$operateur = $manager->get($id);
+
+	echo '<h1>' . $operateur->operateur() . '</h1>';
+	echo  $operateur->secteur() . ' - ' . $operateur->statut_juridique() .  ' : ' . $operateur->activite() . '<br />';
+
+	echo 'Date de Creation : ' . $operateur->date_creation() . '<br />' ;
+
+	echo ' <h3> Coordonnées du siege </h3>';
+	echo $operateur->service() . '<br />';
+
+	echo $operateur->operateur() . '<br />';
+
+		echo $operateur->batiment() . '<br />';
+
+		echo $operateur->numero_siege() ;
+
+		echo ' ' . $operateur->addresse() . '<br />';
+		echo '<br />';
+		echo $operateur->complement_addresse() . '<br />';
+
+	echo $operateur->code_postal() . ' ' . $operateur->ville() ;
+		echo ' ' . $operateur->code_cedex() . '<br />';
+
+	echo '<br />';
+
+		echo 'Tel : ' . $operateur->telephone();
+		echo ' Mail : ' . $operateur->mail();
+
+		echo ' Web : <a href="http://' . $operateur->web() . '">' . $operateur->web() . '</a> <br />';
 
 
+?>

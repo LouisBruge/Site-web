@@ -11,41 +11,14 @@
 <p>
 	<section>
 
-	<?php
+<?php
 	if (isset($_GET['id']))
 	{
-		require( __DIR__ . '/../app/src/MODELE/get.php');
-
-		// affichage des donnes de l'opérateur
-		GetOperateur($_GET['id']);
-
-		// affichage des notes historiques
-		$historique = 'TRUE';
-		GetNotes($_GET['id'], $historique);
-		// affichage des contacts par opérateur
-		GetContacts($_GET['id']);
-
-		// affichage des arrêtés par opérateur
-		GetArretes($_GET['id']);
-		
-		// affichage des candidatures par opérateur
-		GetCandidatures($_GET['id']);
-
-		// affichage des notes
-		$historique = 'FALSE';
-		GetNotes($_GET['id'], $historique);
-	
-	
-
-		require( __DIR__ . '/../app/view/notes.php'); 
-		require( __DIR__ . '/../app/view/contact.php'); 
-		require( __DIR__ . '/../app/view/candidature.php'); 
-		require( __DIR__ . '/../app/view/arrete.php'); 
+		require( __DIR__ . '/../app/view/operateur.php');
 	}
 	else
 	{
-		require( __DIR__ . '/../app/src/MODELE/liste-generale.php');
-		ListeOperateur() ;
+		require( __DIR__ . '/../app/view/operateurs.php');
 	}
 ?>
 	</section>

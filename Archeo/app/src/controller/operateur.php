@@ -1,231 +1,316 @@
 <?php
-function ControllerOperateur($donnee)
+class Operateur
 {
+	// définition des variables
+	private $_id,
+		$_operateur,
+		$_abrev,
+		$_secteur,
+		$_statut_juridique,
+		$_activite,
+		$_siren,
+		$_date_creation,
+		$_historique,
+		$_service,
+		$_batiment,
+		$_numero_siege,
+		$_addresse,
+		$_complement_addresse,
+		$_boite_postale,
+		$_code_postal,
+		$_ville,
+		$_code_cedex,
+		$_departement,
+		$_region,
+		$_pays,
+		$_mail,
+		$_web,
+		$_telephone,
+		$_personnel_min,
+		$_personnel_max;
 
-	echo '<br /> Vérification du statut juridique de la société <br />';
 
-	$donnee['operateur'] = ControllerNom($donnee['operateur']); // controle du nom de l'opérateur
-	$donnee['abrev'] = ControllerAbreviation($donnee['abrev']); // controle de l'abréviation
-	$donnee['secteur'] = ControllerSecteur($donnee['secteur']); // controle si le statut est défini sur public ou privé
-	$donnee['statut_juridique'] = ControllerStatut($donnee['statut_juridique']); // controle du statut juridique
-	$donnee['activite'] = ControllerActivite($donnee['activite']) ;
-	$donnee['siren'] = ControllerInt($donnee['siren']);
+	// fonction d'initialisation
+	public function __construct(array $donnees)
+		{
+			$this->hydrate($donnees);
+		}
 
-	if(isset($donnee['personnel_min']) AND isset($donnee['personnel_max']) AND $donnee['personnel_min'] <= $donnee['personnel_max']) // controle du personnel
+
+	// fonction d'hydratation 
+	public function hydrate(array $donnees)
 	{
-		$donnee['personnel_min'] = ControllerInt($donnee['personnel_min']);
-		$donnee['personnel_max'] = ControllerInt($donnee['personnel_max']);
-	}
-	else
-	{
-		die(' Le nombre minimal de personnel est supérieur au nombre maximum');
-	}
-
-	echo '<br /> Vérification des coordonnées du service ou de l\'entreprise <br />';
-
-	// Controle si le nom du service est défini, et dans ce cas, le controle de la variable est réalisée. Si le nom du service n'est pas défini, c'est le nom de l'opérateur qui est enregistré
-	if(isset($donnee['service'])) 
-	{
-		$donnee['service'] = ControllerNom($donnee['service']);
-	}
-	elseif(empty($donnee['service']))
-	{
-		$donnee['service'] = $donnee['operateur'];
-	}
-	else
-	{
-		die('Erreur du service');
+		foreach($donnees as $key => $value)
+		{
+			$method = 'set'.ucfirst($key);
+			
+			if (method_exists($this, $method))
+			{
+				$this->$method($value);
+			}
+		}
 	}
 
-	// Structure de controle des coordonnées
-	$donnee['batiment'] = ControllerAdresse($donnee['batiment']);
-	$donnee['numero_siege'] = ControllerNumeroRue($donnee['numero_siege']);
-	$donnee['addresse'] = ControllerAdresse($donnee['addresse']);
-	$donnee['complement_addresse'] = ControllerAdresse($donnee['complement_addresse']);
-	$donnee['boite_postale'] = ControllerBoitePostale($donnee['boite_postale']);
-	$donnee['code_postal'] = ControllerInt($donnee['code_postal']);
-	$donnee['ville'] = ControllerCollTerritoriale($donnee['ville']);
-	$donnee['cedex'] = ControllerCedex($donnee['cedex']);
-	$donnee['departement'] = ControllerCollTerritoriale($donnee['departement']);
-	$donnee['region'] = ControllerCollTerritoriale($donnee['region']);
-	$donnee['mail'] = ControllerMail($donnee['mail']);
-	$donnee['web'] = htmlspecialchars($donnee['web']);
-	$donnee['telephone'] = ControllerTelephone($donnee['telephone']);
-	$donnee['date_creation'] = ControllerInt($donnee['date_creation']);
+	// Accessors
+	public function id()
+	{
+		return $this-> _id;
+	}
 
-	return $donnee;
+	public function operateur()
+	{
+		return $this-> _operateur;
+	}
+
+	public function abrev()
+	{
+		return $this-> _abrev;
+	}
+
+	public function secteur()
+	{
+		return $this-> _secteur;
+	}
+
+	public function statut_juridique()
+	{
+		return $this-> _statut_juridique;
+	}
+
+	public function activite()
+	{
+		return $this-> _activite;
+	}
+
+	public function siren()
+	{
+		return $this-> _siren;
+	}
+	public function personnel_max()
+	{
+		return $this->_personnel_max;
+	}
+
+	public function personnel_min()
+	{
+		return $this->_personnel_min;
+	}
+
+	public function telephone()
+	{
+		return $this->_telephone;
+	}
+
+	public function web()
+	{
+		return $this->_web;
+	}
+
+	public function mail()
+	{
+		return $this->_mail;
+	}
+
+	public function pays()
+	{
+		return $this->_pays;
+	}
+
+	public function region()
+	{
+		return $this->_region;
+	}
+
+	public function departement()
+	{
+		return $this->_departement;
+	}
+
+	public function code_cedex()
+	{
+		return $this->_code_cedex;
+	}
+
+	public function ville()
+	{
+		return $this->_ville;
+	}
+
+	public function code_postal()
+	{
+		return $this->_code_postal;
+	}
+
+	public function boite_postale()
+	{
+		return $this->_boite_postale;
+	}
+
+	public function complement_addresse()
+	{
+		return $this->_complement_addresse;
+	}
+
+	public function addresse()
+	{
+		return $this->_addresse;
+	}
+
+	public function numero_siege()
+	{
+		return $this->_numero_siege;
+	}
+
+	public function batiment()
+	{
+		return $this->_batiment;
+	}
+
+	public function service()
+	{
+		return $this->_service;
+	}
+
+	public function historique()
+	{
+		return $this->_historique;
+	}
+
+	public function date_creation()
+	{
+		return $this->_date_creation;
+	}
+
+	// setters
+	public function setId($id) 
+	{
+		$this->_id = $id;
+	}
+	
+	public function setOperateur($operateur) 
+	{
+		$this->_operateur= $operateur;
+	}
+
+	public function setAbrev($abrev) 
+	{
+		$this->_abrev= $abrev;
+	}
+
+	public function setSecteur($secteur) 
+	{
+		$this->_secteur= $secteur;
+	}
+
+	public function setStatut_juridique($statut_juridique) 
+	{
+		$this->_statut_juridique= $statut_juridique;
+	}
+
+	public function setActivite($activite) 
+	{
+		$this->_activite= $activite;
+	}
+
+	public function setSiren($siren) 
+	{
+		$this->_siren= $siren;
+	}
+
+	public function setPersonnel_max($personnel_max)
+	{
+		$this->_personnel_max= $personnel_max;
+	}
+
+	public function setPersonnel_min($personnel_min)
+	{
+		$this->_personnel_min= $personnel_min;
+	}
+
+	public function setTelephone($telephone)
+	{
+		$this->_telephone= $telephone;
+	}
+
+	public function setWeb($web)
+	{
+		$this->_web= $web;
+	}
+
+	public function setMail($mail)
+	{
+		$this->_mail= $mail;
+	}
+
+	public function setPays($pays)
+	{
+		$this->_pays= $pays;
+	}
+
+	public function setRegion($region)
+	{
+		$this->_region= $region;
+	}
+
+	public function setDepartement($departement)
+	{
+		$this->_departement= $departement;
+	}
+
+	public function setCode_cedex($code_cedex)
+	{
+		$this->_code_cedex= $code_cedex;
+	}
+
+	public function setVille($ville)
+	{
+		$this->_ville= $ville;
+	}
+
+	public function setCode_postal($code_postal)
+	{
+		$this->_code_postal= $code_postal;
+	}
+
+	public function setBoite_postale($boite_postale)
+	{
+		$this->_boite_postale= $boite_postale;
+	}
+
+	public function setComplement_addresse($complement_addresse)
+	{
+		$this->_complement_addresse= $complement_addresse;
+	}
+
+	public function setAddresse($addresse)
+	{
+		$this->_addresse= $addresse;
+	}
+
+	public function setNumero_siege($numero_siege)
+	{
+		$this->_numero_siege= $numero_siege;
+	}
+
+	public function setBatiment($batiment)
+	{
+		$this->_batiment= $batiment;
+	}
+
+	public function setService($service)
+	{
+		$this->_service= $service;
+	}
+
+	public function setHistorique($historique)
+	{
+		$this->_historique= $historique;
+	}
+
+	public function setDate_creation($date_creation)
+	{
+		$this->_date_creation= $date_creation;
+	}
+
 }
-
-function ControllerNom ($donnee)
-{
-	if(isset($donnee) AND preg_match('#^[a-zA-Zà-ÿÀ-Ŷ0-9 \'-]+$#', $donnee))
-	{
-		return $donnee;
-	}
-	else
-	{
-		die('Erreur du nom de l\'operateur');
-	}
-}
-
-function ControllerInt ($donnee)
-{
-	if(isset($donnee))
-	{
-		$donnee = (int) $donnee;
-		return $donnee;
-	}
-	else
-	{
-		die(' Erreur dans la déclaration d\'une valeur INT');
-	}
-}
-
-function ControllerAbreviation($donnee)
-{
-	if(isset($donnee) AND preg_match('#^[a-zA-Z0-9]+$#', $donnee))
-	{
-	 	return $donnee;
-	}
-	else
-	{
-		die('Erreur dans la déclaration de l\'abréviation');
-	}
-}
-
-function ControllerSecteur($donnee)
-{
-	if(isset($donnee) AND preg_match('#^(public|prive)$#', $donnee))
-	{
-		return $donnee;
-	}
-	else
-	{
-		die('Erreur dans la déclaration du secteur');
-	}
-}
-
-function ControllerStatut($donnee)
-{
-	if(isset($donnee) AND preg_match('#^[a-zA-Z .]+$#', $donnee))
-	{
-		return $donnee;
-	}
-	else
-	{
-		die('Erreur dans la déclaration du statut');
-	}
-}
-
-function ControllerActivite($donnee)
-{
-	if(isset($donnee) AND preg_match('#^[a-zA-Zà-ÿÀ-Ŷ]+$#', $donnee))
-	{
-		return $donnee;
-	}
-	else
-	{
-		die('Erreur dans la déclaration de l\'activité');
-	}
-}
-
-function ControllerAdresse($donnee)
-{
-	if(isset($donnee) AND preg_match('#^[a-zA-Zà-ÿÀ-Ŷ0-9 .\'-]+$#', $donnee))
-	{
-		return $donnee;
-	}
-	elseif(empty($donnee))
-	{
-		return $donnee = NULL;
-	}
-	else
-	{
-		die('Erreur dans la déclaration de l\'adresse');
-	}
-}
-
-function ControllerNumeroRue($donnee)
-{
-	if(isset($donnee) AND preg_match('#[0-9 -]+$#', $donnee))
-	{
-		return $donnee;
-	}
-	elseif(empty($donnee))
-	{
-		return $donnee = NULL;
-	}
-	else
-	{
-		die('Erreur dans la déclaration du numéro de rue');
-	}
-}
-
-function ControllerBoitePostale($donnee)
-{
-	if(isset($donnee))
-	{
-		$donnee = (int) $donnee;
-		return $donnee;
-	}
-	elseif(empty($donnee))
-	{
-		return $donnee = NULL;
-	}
-	else
-	{
-		die('Erreur de déclaration de la boite postale');
-	}
-}
-
-function ControllerCedex($donnee)
-{
-	if(isset($donnee) AND preg_match('#^CEDEX [0-9]*$#', $donnee))
-	{
-		return $donnee;
-	}
-	else
-	{
-		return $donnee = NULL;
-		
-	}
-}
-
-function ControllerCollTerritoriale($donnee)
-{
-	if(isset($donnee) AND preg_match('#^[a-zA-Zà-ÿÀ-Ŷ-]+$#', $donnee))
-	{
-		return $donnee;
-	}
-	else
-	{
-		die('Erreur dans la déclaration de la collectivité territoirale');
-	}
-}
-
-function ControllerMail($donnee)
-{
-	if(isset($donnee) AND preg_match('#^[0-9a-z._-]+@[0-9a-z_.-]{2,}\.[a-z]{2,4}$#', $donnee))
-	{
-		return $donnee;
-	}
-	else
-	{
-		return $donnee = NULL;
-	}
-}
-
-function ControllerTelephone($donnee)
-{
-	if(isset($donnee) AND preg_match('#^(\+[0-9]{2}|0)[0-9]([-. ]?[0-9]{2}){4}$#', $donnee))
-	{
-		return $donnee;
-	}
-	else
-	{
-		return $donnee = NULL;
-	}
-}
-
-
 ?>
