@@ -63,7 +63,7 @@ class operateurManager
 	{
 		$operateurs = [];
 
-		$q = $this->_db->query('SELECT id, nom_operateur AS operateur, upper(abrev) AS abrev, upper(ville) AS ville FROM operateur ORDER BY nom_operateur');
+	$q = $this->_db->query('SELECT id, nom_operateur AS operateur, upper(abrev) AS abrev, upper(ville) AS ville FROM operateur ORDER BY nom_operateur');
 
 		while($donnees = $q->fetch(PDO::FETCH_ASSOC))
 		{

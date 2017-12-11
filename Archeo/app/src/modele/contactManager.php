@@ -34,7 +34,7 @@ Class contactManager
 	{
 		$id = (int) $id;
 
-		$q = $this->_db->prepare('SELECT id, nom, prenom, id_operateur AS operateur, post, mail, tel, coordonnes, remarques FROM contact WHERE id = :id');
+		$q = $this->_db->prepare('SELECT id, nom, prenom, id_operateur AS operateur, poste, mail, tel, coordonnes, remarques FROM contact WHERE id = :id');
 
 		$q->bindParam(':id', $id, PDO::PARAM_INT);
 
@@ -47,11 +47,11 @@ Class contactManager
 	{
 		$contacts= [];
 
-		$q = $this->_db->query('SELECT id, nom, prenom, id_operateur AS operateur, post, mail, tel, coordonnes, remarques FROM contact ORDER BY nom, prenom');
+		$q = $this->_db->query('SELECT id, nom, prenom, id_operateur AS operateur, poste FROM contact');
 
 		while($donnees = $q->fetch(PDO::FETCH_ASSOC))
 		{
-			$arretes[] = new contact($donnees);
+			$contacts[] = new contact($donnees);
 		}
 
 		return $contacts;
