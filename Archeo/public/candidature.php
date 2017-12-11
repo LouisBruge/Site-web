@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title> Candidature </title>
+	<title> candidature </title>
 	<meta charset="utf-8" />
 	<link rel="stylesheet" media="screen" type="text/css" title="Design" href="/design.css"/>
 </head>
@@ -11,35 +11,16 @@
 <p>
 	<section>
 
-	<h1> Candidature </h1>
-
 <?php
-	if(isset($_GET['id']))
+	if (isset($_GET['id']))
 	{
-		require( __DIR__ . '/../app/src/MODELE/get.php');
-		$valeur = GetCandidatureUnique($_GET['id']); // affichage des informations liées à la candidature et récupération de l'id de l'opérateur
-?>
-
-	<h1> Opérateur </h1>
-
-<?php
-		GetOperateur($valeur['operateur']);
-?>
-
-	<h1> Contact </h1>
-<?php
-		GetContactsUnique($valeur['contact']);
-
-		require(__DIR__ . '/../app/view/candidature-update.php');
+		require( __DIR__ . '/../app/view/candidature.php');
 	}
 	else
 	{
-		require(__DIR__ . '/../app/src/MODELE/liste-generale.php');
-		ListeCandidature() ;
+		require( __DIR__ . '/../app/view/candidatures.php');
 	}
 ?>
-	<a href=#debut>Retourn vers le début</a>
-
 	</section>
 </p>
 </main>
