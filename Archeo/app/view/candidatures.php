@@ -5,7 +5,7 @@
 	require $_SERVER['DOCUMENT_ROOT'] . '/Archeo/app/src/connectiondb.php';
 
 	// paramètres de connexion
-	$db = new PDO('pgsql:host=localhost;dbname=archeo', 'louis', '@m19l5tt5');
+	$db = connectiondb();
 
 	// génération de la liste
 	$manager = new candidatureManager($db);
