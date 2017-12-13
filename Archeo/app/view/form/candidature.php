@@ -2,18 +2,8 @@
         <h2> Enregistrement des candidatures</h2> <br />
 	<fieldset> <legend> Service </legend>
 		<?php 
-			if(isset($_GET['id']))
-			{
-				echo '<input type="hidden" name="operateur" value="' . $_GET['id'] . '" />';
-			}
-			else
-			{
-				echo 'Opérateur : <select name="operateur"> ';
-				ListeOperateur();
-			       echo '</select> <br />';
-			}
-		?>
-		Contact : <select name = "id_contact"> <?php ListeContact(); ?> </select> <br />
+	require $_SERVER['DOCUMENT_ROOT'] . '/Archeo/app/src/share/listeOperateur.php';
+			?>
 		poste : <input type = "text" name="poste" />
 		numéro d'annonce : <input type="text" name="n_annonce" />
 		date : <input type = "date" name="date_envoi" /> <br />
