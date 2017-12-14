@@ -3,6 +3,7 @@ require  $_SERVER['DOCUMENT_ROOT'] . '/Archeo/app/src/modele/contactManager.php'
 require $_SERVER['DOCUMENT_ROOT'] . '/Archeo/app/src/controller/contact.php';
 require $_SERVER['DOCUMENT_ROOT'] . '/Archeo/app/src/connectiondb.php';
 
+//$db = connectiondb();
 $db = connectiondb();
 
 $manager = new contactManager($db);

@@ -7,7 +7,7 @@ function ConnectionDB() // fonction de connection à la base de donnée bibliogr
 			{
 				$user = $_SESSION['login'];
 				$password = $_SESSION['password'];
-				$db = new PDO("pgsql:dbname=biblio;host=localhost", $user, $password);
+				$db = new PDO("pgsql:dbname=biblio;host=localhost", $user, $password, array(PDO::ATTR_PERSISTENT => true));
 				$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 			}
 		}

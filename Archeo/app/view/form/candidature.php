@@ -3,6 +3,7 @@
 	<fieldset> <legend> Service </legend>
 		<?php 
 	require $_SERVER['DOCUMENT_ROOT'] . '/Archeo/app/src/share/listeOperateur.php';
+	require $_SERVER['DOCUMENT_ROOT'] . '/Archeo/app/src/share/listeContact.php';
 			?>
 		poste : <input type = "text" name="poste" />
 		numéro d'annonce : <input type="text" name="n_annonce" />

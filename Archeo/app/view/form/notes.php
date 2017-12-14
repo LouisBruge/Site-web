@@ -1,18 +1,10 @@
 <form method="post" action="/Archeo/FONCTION-ENREG/notes.php" id="note">
 	<h2> Notes complementaires </h2>
 <fieldset>
-		<?php 
-			if(isset($_GET['id']))
-			{
-				echo '<input type="hidden" name="operateur" value="' . $_GET['id'] . '" />';
-			}
-			else
-			{
-				echo 'Opérateur : <select name="operateur"> ';
-				ListeOperateur();
-			       echo '</select> <br />';
-			}
-		?>
+
+	<?php 
+	require $_SERVER['DOCUMENT_ROOT'] . '/Archeo/app/src/share/listeOperateur.php';
+			?>
 
 	<textarea name="note" required='yes'> Note </textarea><br />
 	Source web : <input type="url"  name="web" placeholder="Source Web" /> <br />

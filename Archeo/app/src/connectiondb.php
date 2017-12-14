@@ -6,7 +6,7 @@ function connectiondb()
 			{
 				$user = $_SESSION['login'];
 				$password = $_SESSION['password'];
-				$conn = new PDO("pgsql:dbname=archeo;host=localhost", $user, $password);
+				$conn = new PDO("pgsql:dbname=archeo;host=localhost", $user, $password, array(PDO::ATTR_PERSISTENT => true));
 
 				$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 			}
