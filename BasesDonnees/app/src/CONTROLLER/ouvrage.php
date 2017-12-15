@@ -1,5 +1,41 @@
 <?php
 
+class ouvrage
+{
+    private $_id,
+        $_titre,
+        $_editeur,
+        $_ville,
+        $_collection,
+        $_date,
+        $_commentaire;
+
+    public setId($id)
+        {
+            $this->_id = $id;
+        }
+
+    public setTitre($titre)
+        {
+            $this->_titre = $titre;
+        }
+
+    public setEditeur($editeur)
+        {
+            $this->_editeur = $editeur;
+        }
+
+    public setVille($ville)
+        {
+            $this->_ville = $ville;
+        }
+
+    public setCollection($collection)
+        {
+            $this->_collection = $collection;
+        }
+}
+
 	function ControllerOuvrage($donnee)
 	{
 		require($_SERVER['DOCUMENT_ROOT'] . '/BasesDonnees/CONTROLLER/generique.php');
