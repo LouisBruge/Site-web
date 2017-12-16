@@ -1,6 +1,6 @@
 <?php
 
-Class connectionDb
+Class connectionDb extends PDO
 {
 	private $_user,
 		$_password,
