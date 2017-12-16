@@ -57,6 +57,10 @@ Class connectionDb
 		$this->_password = $password;
 	}
 
+	public function getPdo()
+	{
+		return $this->_pdo;
+	}
 		
 }
 
