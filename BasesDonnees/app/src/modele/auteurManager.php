@@ -48,13 +48,12 @@ class AuteurManager
 	{
 		$persos = [];
 
-		$q = $this->_db->prepare('SELECT * FROM auteur');
-		$q->execute();
+		$q = $this->_db->query('SELECT * FROM auteur');
 
 
-		while($donnees = $q->fetch(PDO::FETCH_ASSOC));
+		while($donnees = $q->fetch(PDO::FETCH_ASSOC))
 		{
-			var_dump($donnees);
+			$persos[] = new Auteur($donnees);
 		}
 
 		return $persos;
