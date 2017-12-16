@@ -1,8 +1,8 @@
 <?php
 
-Class connectionDb extends PDO
+Class connectionDb
 {
-	private $_user,
+	public $_user,
 		$_password,
 		$_dsn,
 		$_pdo;

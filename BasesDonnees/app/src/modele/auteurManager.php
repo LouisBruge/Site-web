@@ -6,7 +6,6 @@ class AuteurManager
 
 	public function __construct($db)
 	{
-		echo 'Initialisation de la classe auteur';
 		$this->setDB($db);
 	}
 
@@ -42,18 +41,20 @@ class AuteurManager
 
 	public function destroy(Auteur $auteur)
 	{
-		$this->_db->exec('DELET FROM auteur WHERE id = '.$perso->id());
+		$this->_db->exec('DELETE FROM auteur WHERE id = '.$perso->id());
 	}
 
 	public function getlist()
 	{
 		$persos = [];
 
-		$q = $this->_db->query('SELECT nom, prenom FROM auteur ORDER BY nom, prenom;');
+		$q = $this->_db->prepare('SELECT * FROM auteur');
+		$q->execute();
+
 
 		while($donnees = $q->fetch(PDO::FETCH_ASSOC));
 		{
-			$persos = new Auteur($donnees);
+			var_dump($donnees);
 		}
 
 		return $persos;

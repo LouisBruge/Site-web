@@ -33,14 +33,12 @@ class Auteur
 	// fonction d'hydratation de la class Auteur
 	public function hydrate(array $donnee)
 	{
-		echo 'Appel à la mèthode hydrate';
 		foreach($donnee as $key => $value)
 		{
 			$method = 'set'.ucfirst($key);
 			if( method_exists($this, $method))
 			{
 				$this->$method($value);
-				echo 'La variable ' . $key . ' = ' . $value . '\n';
 			}
 		
 		}

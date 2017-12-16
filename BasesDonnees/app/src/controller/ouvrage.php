@@ -8,7 +8,7 @@ class ouvrage extends media
 
     public function __construct(array $donnee)
     {
-	    $this->hudrate($donnee);
+	    $this->hydrate($donnee);
     }
 
     public function ville() {	return $this->_ville;	}
@@ -34,13 +34,6 @@ class ouvrage extends media
 
     public function setCollection($collection)
         {
-		if (preg_match('#^[a-zA-Zà-ÿÀ-Ŷ,.;:!\' -]+$#', $collection))
-		{
 			$this->_collection = $collection;
-		}
-		else
-		{
-			die('Erreur de déclaration de la collection');
-		}
         }
 }
