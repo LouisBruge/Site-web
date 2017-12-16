@@ -1,11 +1,11 @@
 <?php
 
-Class connectionDb extends PDO
+Class connectionDb
 {
 	private $_user,
 		$_password,
-		$_dsn,
-		$_pdo;
+		$_dsn;
+	public static	$pdo;
 
 	public function __construct($dsn, $user, $password)
 	{
@@ -16,7 +16,7 @@ Class connectionDb extends PDO
 
 	public function connection()
 	{
-		if($this->_pdo === null){
+		if(self::$pdo === null){
 
 
 			try
@@ -29,15 +29,16 @@ Class connectionDb extends PDO
 				echo 'Echec de la connexion : ' . $e->getMessage();
 			}
 
-			$this->_pdo = $pdo;
+			print_r($pdo);
+			self::$pdo = $pdo;
 		}
 
-		return $this->_pdo;
+		return self::$pdo;
 	}
 
 	public function deconnexion()
 	{
-		unset($this->_pdo);
+		unset(self::$pdo);
 	}
 	public function setDsn($dsn)
 	{
@@ -55,11 +56,6 @@ Class connectionDb extends PDO
 	public function setPassword($password)
 	{
 		$this->_password = $password;
-	}
-
-	public function getPdo()
-	{
-		return $this->_pdo;
 	}
 		
 }
