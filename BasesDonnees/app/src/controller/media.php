@@ -1,8 +1,9 @@
 <?php 
-class media 
+abstract class media 
 {
     protected $_id,
         $_titre,
+	$_editeur,
         $_annee,
         $_commentaire;
 
@@ -27,6 +28,7 @@ class media
 
     public function id()    {   return $this->_id;  }
     public function titre()    {   return $this->_titre;  }
+    public function editeur()    {   return $this->_editeur;  }
     public function annee()    {   return $this->_annee;  }
     public function commentaire()    {   return $this->_commentaire;  }
 
@@ -39,6 +41,11 @@ class media
         {
             $this->_titre = $titre;
         }
+
+    public function setEditeur($editeur)
+    {
+	    $this->_editeur = $editeur;
+    }
 
     public function setAnnee($annee)
         {

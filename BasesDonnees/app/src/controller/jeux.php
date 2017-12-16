@@ -1,13 +1,8 @@
 <?php
 
-class jeux
+class jeux extends media
 {
-    private $_id,
-        $_titre,
-        $_editeur,
-        $_plateforme,
-        $_date,
-        $_commentaire;
+    private $_plateforme;
 
     public function __construct(array $donnee)
     {
@@ -28,53 +23,20 @@ class jeux
 		}
     }
 
-    public function id() {  return $this->_id;  }
-    public function titre() {  return $this->_titre;  }
-    public function editeur() {  return $this->_editeur;  }
     public function plateforme() {  return $this->_plateforme;  }
-    public function date() {  return $this->_date;  }
-    public function commentaire() {  return $this->_commentaire;  }
 
-    public function setId($id)
-    {
-        $this->_id = (int) $id;
-    }
-
-    public function setTitre($titre)
-    {
-        $this->_titre = $titre;
-    }
-
-    public function setEditeur($editeur)
-    {
-        $this->_editeur = $editeur;
-    }
 
     public function setPlateforme($plateforme)
     {
-        $this->_plateforme = $plateforme;
-    }
-
-    public function setDate($date)
-    {
-        $this->_date = (int) $date;
-    }
-
-    public function setCommentaire($commentaire)
-    {
-        $this->_commentaire = $commentaire;
+	    if preg_match('#a-zA-Z0-9 ]+$#', $plateforme)
+	    {
+		    $this->_plateforme = $plateforme;
+	    }
+	    else
+	    {
+		    die('Erreur de déclaration de la plateforme');
+	    }
     }
 }
 
-	function ControllerPlateforme($donnee)
-	{
-		if(isset($donnee) AND preg_match('#^[a-zA-Z0-9 ]+$#', $donnee))
-		{
-			return $donnee;
-		}
-		else
-		{
-			die('Erreur dans la déclaration de la plateforme');
-		}
-	}
 ?>

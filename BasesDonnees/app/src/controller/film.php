@@ -1,14 +1,10 @@
 <?php
 
-   class film
+   class film extends media
    {
-       private $id,
-           $_titre,
-           $_realisateur,
+       private $_realisateur,
            $_studio,
-           $_date,
-           $_duree,
-           $_commentaire;
+           $_duree;
 
        public functon __construct(array $donnee)
            {
@@ -28,23 +24,9 @@
            }
        }
        
-       public function id() {    return $this->_id;   }
-       public function titre() {    return $this->_titre;   }
        public function realisateur() {    return $this->_realisateur;   }
        public function studio() {    return $this->_studio;   }
-       public function date() {    return $this->_date;   }
        public function duree() {    return $this->_duree;   }
-       public function commentaire() {    return $this->_commentaire;   }
-
-       public function id($id)
-       {
-           $this-> _id = (int) $id;
-       }
-
-       public function setTitre($titre)
-       {
-           $this->_titre = $titre;
-       }
 
        public function setRealisateur($realisateur)
        {
@@ -56,20 +38,11 @@
            $this->_studio = $studio;
        }
 
-       public function setDate($date)
-       {
-           $this->_date = (int) $date;
-       }
-
        public function setDuree($duree)
        {
            $this->_duree = (int) $duree;
        }
 
-       publid function setCommentaire($commentaire)
-       {
-           $this->_commentaire = $commentaire;
-       }
    }
 ?>
 
