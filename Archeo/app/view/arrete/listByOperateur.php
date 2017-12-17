@@ -1,7 +1,7 @@
 <?php
 
-require __DIR__ . '/controller/arrete.php';
-require __DIR__ . '/modele/arreteManager.php';
+require '/srv/http/Archeo/app/src/controller/arrete.php';
+require '/srv/http/Archeo/app/src/modele/arreteManager.php';
 require '/srv/http/moduleConnection.php';
 
 $db = new connectionDb('archeo', 'louis', '@m19l5tt5');

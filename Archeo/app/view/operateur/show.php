@@ -42,5 +42,5 @@
 		Mail : <?= $operateur->mail() ?><br />
 		Web : <a href="<?= $operateur->web() ?>"> <?= $operateur->web() ?> </a><br />
 	</p>
-<?php require $_SERVER['DOCUMENT_ROOT'] . '/Archeo/app/src/test.php'; ?>
+<?php require $_SERVER['DOCUMENT_ROOT'] . '/Archeo/app/view/arrete/listByOperateur.php'; ?>
 
