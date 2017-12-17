@@ -1,8 +1,8 @@
 <?php
 
 require __DIR__ . '/../../src/controller/media.php';
-require __DIR__ . '/../../src/controller/film.php';
-require __DIR__ . '/../../src/modele/filmManager.php';
+require __DIR__ . '/../../src/controller/ouvrage.php';
+require __DIR__ . '/../../src/modele/ouvrageManager.php';
 require '/srv/http/moduleConnection.php';
 
 $db = new connectionDb('biblio', $_SESSION['login'], $_SESSION['password']);
@@ -13,24 +13,26 @@ $conn = $db::$pdo;
 
 
 
-	$manager = new filmManager($conn);
+	$manager = new ouvrageManager($conn);
 
-	$listFilm = $manager->getList();
+	$listouvrage = $manager->getList();
 ?>
 
 	<table><tr><th> ID </th>
+			<th> Auteur(s) </th>
 			<th> Titre </th>
-			<th> Réalisateur </th>
+			<th> Editeur </th>
 			<th> Année </th>
 		</tr>
 
 <?php
-	foreach($listFilm AS $film)
+	foreach($listouvrage AS $ouvrage)
 	{	
-		echo '<tr>	<td><a href="/BasesDonnees/public/film.php?id= ' . $film->id() . '"> ' . $film->id() . '</td>
-			<td>' . $film->titre() . '</td>
-			<td>' . $film->realisateur() . '</td>
-			<td>' . $film->annee() . '</td></tr>';
+		echo '<tr>	<td><a href="/BasesDonnees/public/ouvrage.php?id= ' . $ouvrage->id() . '"> ' . $ouvrage->id() . '</td>
+			<td>' . $ouvrage->auteur() . '</td>
+			<td>' . $ouvrage->titre() . '</td>
+			<td>' . $ouvrage->editeur() . '</td>
+			<td>' . $ouvrage->annee() . '</td></tr>';
 	}
 ?>
 

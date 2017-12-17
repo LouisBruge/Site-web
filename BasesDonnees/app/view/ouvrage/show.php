@@ -1,7 +1,7 @@
 <?php
 require __DIR__ . '/../../src/controller/media.php';
-require __DIR__ . '/../../src/controller/film.php';
-require __DIR__ . '/../../src/modele/filmManager.php';
+require __DIR__ . '/../../src/controller/ouvrage.php';
+require __DIR__ . '/../../src/modele/ouvrageManager.php';
 require '/srv/http/moduleConnection.php';
 
 $db = new connectionDb('biblio', $_SESSION['login'], $_SESSION['password']);
@@ -12,17 +12,21 @@ $conn = $db::$pdo;
 
 $id = (int) $_GET['id'];
 
-$manager = new filmManager($conn);
-$film = $manager->get($id);
+$manager = new ouvrageManager($conn);
+$ouvrage = $manager->get($id);
 
 ?>
 
-	<p> <h1> <?= $film->titre(); ?> </h1>
+	<p> <h1> <?= $ouvrage->titre(); ?> </h1>
 
-	Film réalisée par : <strong> <?= $film->realisateur(); ?> </strong> <br />
-	en <?= $film->annee(); ?> par le studio <?= $film->studio(); ?>
+	ouvrage écrit par : <strong> <?= $ouvrage->auteur(); ?> </strong> <br />
+	publié en <?= $ouvrage->annee(); ?> par <?= $ouvrage->editeur(); ?> (<?= $ouvrage->ville(); ?>) <?php
+	if(!empty($ouvrage->_collection)) {
+		echo $ouvrage->collection();
+	}
+?>
+
 
 	<br />
 	<br />
 
-	Durée : <?= $film->duree();?> min<br />
