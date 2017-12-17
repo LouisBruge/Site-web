@@ -16,10 +16,15 @@
 	// Envoi de la requête
 	$candidature = $manager->get($id);
 
-	echo 'Date d\'envoi : ' . date('d/m/Y', strtotime($candidature->date_envoi())) . '<br />';
-	echo ' Poste  : ' . $candidature->poste();
-	echo ' - ' . $candidature->n_annonce() . '<br />';
-	echo ' Support : ' . $candidature->support() . '<br />';
-	echo '<br />';
-
 ?>
+
+	<h1> <?= $candidature->poste(); ?> chez <a href="/Archeo/public/operateur?id='<?= $candidature->operateur(); ?>'"> <?= $candidature->operateur(); ?></a> </h1>
+	
+	<p>
+	Date d'envoi de la candidature : <?=  date('d/m/Y', strtotime($candidature->date_envoi())) ?> par <?= $candidature->support() ?> <br />
+
+	envoyer à <?= $candidature->contact() ?> <br /><br />
+
+	Numéro d'annonce : <?= $candidature->n_annonce() ?>
+	</p>
+

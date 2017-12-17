@@ -16,23 +16,15 @@
 	// Envoi de la requête
 	$contact = $manager->get($id);
 
-	echo '<stong>     ' . $contact->nom() . ' ' . $contact->prenom() . '</strong><br />';
-	if(!empty($contact->poste()))
-	{
-		echo ' Poste : ' . $contact->poste() . '<br />';
-	}
-	if(!empty($contact->mail()))
-	{
-		echo 'Mail : ' . $contact->mail() . '<br />';
-	}
-	if(!empty($contact->tel()))
-	{
-		echo 'Téléphone : ' . $contact->tel() . '<br />';
-	}
-	if(!empty($contact->coordonnes()))
-	{
-		echo $contact->coordonnes() . '<br />';
-	}
-
-
 ?>
+
+	<h1> <?= $contact->nom() ?> <?= $contact->prenom() ?> </h1>
+	<h2> <?= $contact->operateur() ?> </h2>
+
+	<p>
+		Poste : <?= $contact->poste() ?> <br />
+		<br />
+		Mail : <?= $contact->mail() ?> <br />
+		Téléphone : <?= $contact->tel() ?> <br />
+		Coordonnées : <?= $contact->coordonnes() ?> <br />
+	</p>

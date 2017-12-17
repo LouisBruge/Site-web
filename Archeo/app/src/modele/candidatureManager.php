@@ -37,7 +37,7 @@ Class candidatureManager
 	{
 		$id = (int) $id;
 
-		$q = $this->_db->prepare('SELECT id, id_operateur AS operateur, id_contact AS contact, poste, spontannee, date_envoi, n_annonce FROM candidature WHERE id = :id');
+		$q = $this->_db->prepare('SELECT id, id_operateur AS operateur, id_contact AS contact, poste, spontannee, date_envoi, n_annonce, support FROM candidature WHERE id = :id');
 
 		$q->bindParam(':id', $id, PDO::PARAM_INT);
 
