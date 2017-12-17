@@ -11,7 +11,16 @@
 	<body>
 		<?php include($_SERVER['DOCUMENT_ROOT'] . '/menu.php') ; ?>
 		<section>
-			<?php require(__DIR__ . '/../app/src/view/contacts.php'); ?>
+			<?php 
+	if(isset($_GET['id']))
+	{
+
+		require (__DIR__ . '/../app/src/view/show.php');
+	}
+	else
+	{
+		require(__DIR__ . '/../app/src/view/index.php');
+	}?>
 		</section>
 </main>
 </body>
