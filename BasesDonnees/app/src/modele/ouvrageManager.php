@@ -52,7 +52,7 @@ class ouvrageManager
 	{
 		$ouvrages = [];
 
-		$q = $this->_db->query('SELECT auteur AS auteur, titre AS titre, editeur AS editeur, ville_edition AS ville, date AS annee, collection AS collection, commentaire AS commentaire FROM ouvrage ORDER BY auteur, titre, annee;');
+		$q = $this->_db->query('SELECT id, auteur AS auteur, titre AS titre, editeur AS editeur, ville_edition AS ville, date AS annee, collection AS collection, commentaire AS commentaire FROM ouvrage ORDER BY auteur, titre, annee;');
 
 
 		while($donnees = $q->fetch(PDO::FETCH_ASSOC))
