@@ -39,20 +39,20 @@
                  <ul id="tabs">
 		     <li> Annuaire </li>
 			<ul id="annuaire">
-		     		<li><a href="/Annuaire/annuaire.php">Liste</a></li>
-				<li><a href="/Annuaire/formulaire.php">Formulaire</a></li>
+		     		<li><a href="/Annuaire/public/annuaire.php">Liste</a></li>
+				<li><a href="/Annuaire/public/formulaire.php">Formulaire</a></li>
 			</ul>
 		     <li>Inventaires</li>
 			<ul id="inventaires">
-				<li><a href="/BasesDonnees/SQL/film.php"/>Films</a></li>
-				<li><a href="/BasesDonnees/SQL/jeux_video.php"/>Jeux</a></li>
-				<li><a href="/BasesDonnees/SQL/ouvrage.php"/>Ouvrages</a></li>
-                		<li><a href="/BasesDonnees/formulaires.php">Formulaires</a></li>
+				<li><a href="/BasesDonnees/public/film.php"/>Films</a></li>
+				<li><a href="/BasesDonnees/public/jeux.php"/>Jeux</a></li>
+				<li><a href="/BasesDonnees/public/ouvrage.php"/>Ouvrages</a></li>
+                		<li><a href="/BasesDonnees/public/formulaires.php">Formulaires</a></li>
 			</ul>
 		     <li>Archéologie</li>
 			<ul id="Archeologie">
 		     		<li><a href="/Archeo/public/candidature.php">Candidatures</a></li>
-		     		<li><a href="/Archeo/formulaires.php">Formulaires</a></li>
+		     		<li><a href="/Archeo/public/formulaires.php">Formulaires</a></li>
 		     		<li><a href="/Archeo/public/operateur.php">Operateur</a></li>
 			</ul>
                  </ul>
