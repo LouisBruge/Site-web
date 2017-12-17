@@ -72,6 +72,29 @@ Class arreteManager {
 		return new arrete ($q -> fetch(PDO::FETCH_ASSOC));
 	}
 
+	public function getListByOperateur($id_operateur)
+	{
+		$id_operateur = (int) $id_operateur;
+
+		$arretes = [];
+
+		$q = $this->_db->prepare('SELECT id, id_operateur AS operateur, annee, fouille, diagnostic, paleolithique, neolithique, protohistoire, romain, medieval, moderne, contemporain FROM arrete WHERE id_operateur = :id ORDER BY annee');
+		$q->bindParam(':id', $id_operateur, PDO::PARAM_INT);
+
+		$q->execute();
+
+		while($donnees = $q->fetch(PDO::FETCH_ASSOC))
+		{
+			$arretes[] = new arrete($donnees);
+		}
+
+		return $arretes;
+
+
+	}
+
+
+
 	public function getList()
 	{
 		$arretes = [];

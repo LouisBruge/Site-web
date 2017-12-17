@@ -3,6 +3,9 @@ Class arrete {
 	// définitions des variables
 	private $_id,
 		$_operateur,
+		$_annee,
+		$_fouille,
+		$_diagnostic,
 		$_paleolithique,
 		$_neolithique,
 		$_protohistoire,
@@ -42,6 +45,21 @@ Class arrete {
 	public function operateur()
 	{
 		return $this->_operateur;
+	}
+
+	public function annee()
+	{
+		return $this->_annee;
+	}
+
+	public function fouille()
+	{
+		return $this->_fouille;
+	}
+
+	public function diagnostic()
+	{
+		return $this->_diagnostic;
 	}
 
 	public function paleolithique()
@@ -88,6 +106,21 @@ Class arrete {
 	public function setOperateur($operateur)
 	{
 		$this->_operateur= $operateur;
+	}
+
+	public function setAnnee($annee)
+	{
+		$this->_annee= $annee;
+	}
+
+	public function setFouille($fouille)
+	{
+		$this->_fouille= $fouille;
+	}
+
+	public function setDiagnostic($diagnostic)
+	{
+		$this->_diagnostic = $diagnostic;
 	}
 
 	public function setPaleolithique($paleolithique)
