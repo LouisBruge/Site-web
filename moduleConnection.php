@@ -42,7 +42,7 @@ Class connectionDb
 	public function setDsn($dsn)
 	{
 		$this->_dsn = "pgsql:host=localhost;dbname=" . $dsn;
-		echo $dsn;
+		//echo $dsn;
 		
 	}
 
