@@ -6,7 +6,7 @@
            $_studio,
            $_duree;
 
-       public functon __construct(array $donnee)
+       public function __construct(array $donnee)
            {
                $this->hydrate($donnee);
            }
