@@ -28,14 +28,7 @@ class jeux extends media
 
     public function setPlateforme($plateforme)
     {
-	    if preg_match('#a-zA-Z0-9 ]+$#', $plateforme)
-	    {
-		    $this->_plateforme = $plateforme;
-	    }
-	    else
-	    {
-		    die('Erreur de déclaration de la plateforme');
-	    }
+	    $this->_plateforme = $plateforme;
     }
 }
 
