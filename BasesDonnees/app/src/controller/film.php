@@ -19,7 +19,6 @@
 			    if( method_exists($this, $method))
 			    {
 				    $this->$method($value);
-				    echo 'La variable ' . $key . ' = ' . $value . '\n';
 			    }
            }
        }
