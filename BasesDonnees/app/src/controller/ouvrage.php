@@ -11,6 +11,7 @@ class ouvrage extends media
 	    $this->hydrate($donnee);
     }
 
+    public function auteur() {	return $this->_auteur;	}
     public function ville() {	return $this->_ville;	}
     public function collection() {	return $this->_collection;	}
 
@@ -22,14 +23,7 @@ class ouvrage extends media
 
     public function setVille($ville)
         {
-		if (preg_match( '#^[a-zA-Zà-ÿÀ-Ŷ-]+$#', $ville))
-		{
 			$this->_ville = $ville;
-		}
-		else 
-		{
-			die('Erreur de déclaration de la ville');
-		}
         }
 
     public function setCollection($collection)
