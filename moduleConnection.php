@@ -29,7 +29,6 @@ Class connectionDb
 				echo 'Echec de la connexion : ' . $e->getMessage();
 			}
 
-			print_r($pdo);
 			self::$pdo = $pdo;
 		}
 
