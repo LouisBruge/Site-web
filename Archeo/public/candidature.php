@@ -14,11 +14,11 @@
 <?php
 	if (isset($_GET['id']))
 	{
-		require( __DIR__ . '/../app/view/candidature.php');
+		require( __DIR__ . '/../app/view/candidature/show.php');
 	}
 	else
 	{
-		require( __DIR__ . '/../app/view/candidatures.php');
+		require( __DIR__ . '/../app/view/candidature/index.php');
 	}
 ?>
 	</section>
