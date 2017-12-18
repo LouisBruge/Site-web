@@ -1,16 +1,18 @@
 <?php
 
-Class connectionDb
+namespace \griselangue\core;
+
+Class connexion
 {
 	public $_user,
 		$_password,
 		$_dsn;
 	public static	$pdo;
 
-	public function __construct($dsn, $user, $password)
+	public function __construct($dsn, session $session)
 	{
-		$this->setUser($user);
-		$this->setPassword($password);
+		$this->setUser($session->setLogin());
+		$this->setPassword($session->setPassword());
 		$this->setDsn($dsn);
 	}
 

@@ -1,4 +1,6 @@
 <?php
+namespace griselangue\Login;
+
 class session
 {
     private $_login,
@@ -10,21 +12,22 @@ class session
         $this->setPassword($password);
     }
 
-    public function setLogin($login)
+    private function setLogin($login)
     {
         $this->_login = htmlspecialchars($login);
     }
 
-    public function setPassword($password)
+    private function setPassword($password)
     {
         $this->_password = htmlspecialchars($password);
     }
 
-    public function setSession()
+    private function setSession()
     {
         $_SESSION['login'] = $this->_login;
         $_SESSION['password'] = $this->_password;
     }
+
 
     public function destroy()
     {
