@@ -1,5 +1,14 @@
 <?php
-session_start(); ?>
+session_start(); 
+use griselangue\core\autoloader;
+use griselangue\core\connexion;
+use griselangue\core\session;
+
+require __DIR__ . '/../core/autoloader.php';
+
+autoLoader::register();
+
+?>
 
 <!DOCTYPE html>
 <html>
@@ -15,19 +24,8 @@ session_start(); ?>
 			<?php
 				if(isset($_POST['login']) && isset($_POST['password']))
 					{
-						try
-						{
-							$login = htmlspecialchars($_POST['login']);
-							$passwd = htmlspecialchars($_POST['password']);
-							$db = new PDO("pgsql:dbname=biblio;host=localhost", $login, $passwd);
-							$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-							$_SESSION['login'] = htmlspecialchars($_POST['login']);
-							$_SESSION['password'] = htmlspecialchars($_POST['password']);
-						}
-						catch(PDOEXception $e)
-						{
-							echo 'Echec : ' . $e->getMessage();
-						};
+						$user = new session($_POST['login'], $_POST['password']);
+						$db = new connexion('biblio', $user);
 				}
 ?>
 	<h1> Page de membre </h1>
@@ -36,6 +34,7 @@ session_start(); ?>
 	<br />
 	Pour se déconnecter, merci de cliquer sur ce <a href="deconnexion.php"> lien </a> <br />
 		</section>
+
 	</p>
 
 			</main>

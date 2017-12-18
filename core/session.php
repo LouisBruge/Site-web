@@ -1,38 +1,51 @@
 <?php
-namespace griselangue\Login;
+namespace griselangue\core;
 
 class session
 {
     private $_login,
         $_password;
 
-    public function __construct ()
+    public function __construct ($login, $password)
     {
-        $this->setLogin($login);
-        $this->setPassword($password);
+        	$this->setLogin($login);
+		$this->setPassword($password);
+		$this->setSession();
     }
 
-    private function setLogin($login)
+    public function setLogin($login)
     {
         $this->_login = htmlspecialchars($login);
     }
 
-    private function setPassword($password)
+    public function setPassword($password)
     {
         $this->_password = htmlspecialchars($password);
     }
-
-    private function setSession()
-    {
-        $_SESSION['login'] = $this->_login;
-        $_SESSION['password'] = $this->_password;
-    }
-
 
     public function destroy()
     {
         session_destroy();
     } 
+
+    private function setSession()
+    {
+	    if (!isset($_SESSION['login']) && !isset($_SESSION['password']))
+	    {
+		    $_SESSION['login'] = $this->login();
+		    $_SESSION['password'] = $this->password();
+	    }
+    }
+
+    public function login()
+    {
+	    return $this->_login;
+    }
+
+    public function password()
+    {
+	    return $this->_password;
+    }
 }
 
 ?>
