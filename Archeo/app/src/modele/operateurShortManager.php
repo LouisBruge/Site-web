@@ -1,4 +1,5 @@
 <?php
+namespace archeo\modele;
 class operateurShortManager
 {
 	private $db;

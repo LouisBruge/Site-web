@@ -1,4 +1,5 @@
 <?php
+namespace archeo\modele;
 Class contactManager
 {
 	private $_db;

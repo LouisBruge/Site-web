@@ -1,4 +1,5 @@
 <?php
+namespace archeo\controller;
 Class contact
 {
 	private $_id,
