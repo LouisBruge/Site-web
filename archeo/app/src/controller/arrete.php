@@ -1,4 +1,5 @@
 <?php
+namespace archeo\app\src\controller;
 Class arrete {
 	// définitions des variables
 	private $_id,

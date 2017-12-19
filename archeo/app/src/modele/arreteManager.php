@@ -1,4 +1,5 @@
 <?php
+namespace archeo\modele;
 Class arreteManager {
 
 	private $_db;

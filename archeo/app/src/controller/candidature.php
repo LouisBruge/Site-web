@@ -1,4 +1,5 @@
 <?php
+namespace archeo\controller;
 Class candidature
 {
 	private $_id,

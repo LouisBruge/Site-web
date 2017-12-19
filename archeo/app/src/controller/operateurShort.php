@@ -1,4 +1,5 @@
 <?php
+namespace archeo\controller;
 class operateurShort
 {
 	private $_id,
