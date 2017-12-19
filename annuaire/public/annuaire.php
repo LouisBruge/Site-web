@@ -9,17 +9,31 @@
 		<link rel="stylesheet" href="/design.css" type="text/css" media="screen" />
 	</head>
 	<body>
-		<?php include($_SERVER['DOCUMENT_ROOT'] . '/menu.php') ; ?>
+		<?php require($_SERVER['DOCUMENT_ROOT'] . '/menu.php') ; ?>
 		<section>
 			<?php 
+
+	use griselangue\core\connexion;
+	require __DIR__ . '/../app/src/contactManager.php';
+	require __DIR__ .  '/../app/src/contact.php';
+
+	$db = new connexion('biblio', $session);
+
+	$manager = new contactManager($db);
+
+
 	if(isset($_GET['id']))
 	{
+		$id = (int) $_GET['id'];
 
-		require (__DIR__ . '/../app/src/view/show.php');
+		$contact = $manager->get($id);
+
+		require (__DIR__ . '/../app/view/show.php');
 	}
 	else
 	{
-		require(__DIR__ . '/../app/src/view/index.php');
+		$contacts = $manager->getList();
+		require(__DIR__ . '/../app/view/index.php');
 	}?>
 		</section>
 </main>
