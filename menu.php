@@ -40,7 +40,7 @@
                  <ul id="tabs">
 		     <li> Annuaire </li>
 			<ul id="annuaire">
-		     		<li><a href="/annuaire/public/annuaire.php">Liste</a></li>
+		 <!--    		<li><a href="/annuaire/public/annuaire.php">Liste</a></li> --!>
 				<li><a href="/annuaire/public/formulaire.php">Formulaire</a></li>
 			</ul>
 		     <li>Inventaires</li>
@@ -48,7 +48,7 @@
 				<li><a href="/bibliographie/public/film.php"/>Films</a></li>
 				<li><a href="/bibliographie/public/jeux.php"/>Jeux</a></li>
 				<li><a href="/bibliographie/public/ouvrage.php"/>Ouvrages</a></li>
-                		<li><a href="/bibliographie/public/formulaires.php">Formulaires</a></li>
+                		<!-- <li><a href="/bibliographie/public/formulaires.php">Formulaires</a></li> --!>
 			</ul>
 		     <li>Archéologie</li>
 			<ul id="Archeologie">
