@@ -1,23 +1,3 @@
-<?php
-
-require __DIR__ . '/../../src/controller/media.php';
-require __DIR__ . '/../../src/controller/jeux.php';
-require __DIR__ . '/../../src/modele/jeuxManager.php';
-require '/srv/http/moduleConnection.php';
-
-$db = new connectionDb('biblio', $_SESSION['login'], $_SESSION['password']);
-
-$db->connection();
-
-$conn = $db::$pdo;
-
-
-
-	$manager = new jeuxManager($conn);
-
-	$listjeux = $manager->getList();
-?>
-
 	<table><tr><th> ID </th>
 			<th> Titre </th>
 			<th> Editeur </th>
@@ -28,7 +8,7 @@ $conn = $db::$pdo;
 <?php
 	foreach($listjeux AS $jeux)
 	{	
-		echo '<tr>	<td><a href="/BasesDonnees/public/jeux.php?id= ' . $jeux->id() . '"> ' . $jeux->id() . '</td>
+		echo '<tr>	<td><a href="/bibliographie/public/jeux.php?id= ' . $jeux->id() . '"> ' . $jeux->id() . '</td>
 			<td>' . $jeux->titre() . '</td>
 			<td>' . $jeux->editeur() . '</td>
 			<td>' . $jeux->plateforme() . '</td>

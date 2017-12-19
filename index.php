@@ -28,8 +28,8 @@ session_start();
 				    <h2>Base Bibliographique</h2>
 				    <p>
                         <ul>
-                            <li><a href="/BasesDonnees/public/ouvrage.php">Base de Donnée</a><br/></li>
-				    	    <li><a href="/BasesDonnees/public/formulaires.php#monographie">Formulaires d'enregistrement</a><br/></li>
+                            <li><a href="/bibliographie/public/ouvrage.php">Base de Donnée</a><br/></li>
+				    	    <li><a href="/bibliographie/public/formulaires.php#monographie">Formulaires d'enregistrement</a><br/></li>
                         </lu>
 				    </p>
                 </div>
@@ -39,8 +39,8 @@ session_start();
 				    <h2> Base Vidéoludique </h2>
 				    <p>
                         <ul>
-					        <li><a href="/BasesDonnees/public/jeux.php">Base de Donnée</a><br/></li>
-					        <li><a href="/BasesDonnees/public/formulaires.php#jeux_video">Formulaires d'enregistrement</a><br /></li>
+					        <li><a href="/bibliographie/public/jeux.php">Base de Donnée</a><br/></li>
+					        <li><a href="/bibliographie/public/formulaires.php#jeux_video">Formulaires d'enregistrement</a><br /></li>
                         </ul>
 				    </p>
                 </div>
@@ -49,8 +49,8 @@ session_start();
 				    <h2> Base Filmographique </h2>
 				    <p>
                         <ul>
-					        <li><a href="/BasesDonnees/public/film.php">Base de Donnée</a><br/></li>
-    					    <li><a href="/BasesDonnees/public/formulaires.php#film">Formulaires d'enregistrement</a><br /></li>
+					        <li><a href="/bibliographie/public/film.php">Base de Donnée</a><br/></li>
+    					    <li><a href="/bibliographie/public/formulaires.php#film">Formulaires d'enregistrement</a><br /></li>
                         </ul>
 				    </p>
                 </div>

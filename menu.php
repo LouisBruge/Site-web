@@ -3,6 +3,14 @@
 			<a href="/index.php"><h1> Home's Server </h1></a>
 		</div>
 
+<!-- chargement de l'autoloader --!>
+	<?php
+		require ($_SERVER['DOCUMENT_ROOT'] . '/core/autoloader.php');
+		griselangue\core\autoLoader::register();
+		$session = new	griselangue\core\session($_SESSION['login'], $_SESSION['password']);
+	?>
+
+
 <!-- login intégré dans l'header --!>
 	<div id="login">
 		<?php
@@ -32,21 +40,21 @@
                  <ul id="tabs">
 		     <li> Annuaire </li>
 			<ul id="annuaire">
-		     		<li><a href="/Annuaire/public/annuaire.php">Liste</a></li>
-				<li><a href="/Annuaire/public/formulaire.php">Formulaire</a></li>
+		     		<li><a href="/annuaire/public/annuaire.php">Liste</a></li>
+				<li><a href="/annuaire/public/formulaire.php">Formulaire</a></li>
 			</ul>
 		     <li>Inventaires</li>
 			<ul id="inventaires">
-				<li><a href="/BasesDonnees/public/film.php"/>Films</a></li>
-				<li><a href="/BasesDonnees/public/jeux.php"/>Jeux</a></li>
-				<li><a href="/BasesDonnees/public/ouvrage.php"/>Ouvrages</a></li>
-                		<li><a href="/BasesDonnees/public/formulaires.php">Formulaires</a></li>
+				<li><a href="/bibliographie/public/film.php"/>Films</a></li>
+				<li><a href="/bibliographie/public/jeux.php"/>Jeux</a></li>
+				<li><a href="/bibliographie/public/ouvrage.php"/>Ouvrages</a></li>
+                		<li><a href="/bibliographie/public/formulaires.php">Formulaires</a></li>
 			</ul>
 		     <li>Archéologie</li>
 			<ul id="Archeologie">
-		     		<li><a href="/Archeo/public/candidature.php">Candidatures</a></li>
-		     		<li><a href="/Archeo/public/formulaires.php">Formulaires</a></li>
-		     		<li><a href="/Archeo/public/operateur.php">Operateur</a></li>
+		     		<li><a href="/archeo/public/candidature.php">Candidatures</a></li>
+		     		<li><a href="/archeo/public/formulaires.php">Formulaires</a></li>
+		     		<li><a href="/archeo/public/operateur.php">Operateur</a></li>
 			</ul>
                  </ul>
             </div>

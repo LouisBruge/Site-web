@@ -7,18 +7,30 @@
 	<link rel="stylesheet" media="screen" type="text/css" title="Design" href="/design.css"/>
 </head>
 <body>
-        <?php include($_SERVER['DOCUMENT_ROOT'].'/menu.php'); //ajout du menu dans le texte ?>
+        <?php require($_SERVER['DOCUMENT_ROOT'].'/menu.php'); //ajout du menu dans le texte ?>
 <p>
 	<section>
 
 	<?php
 
+	use griselangue\core\connexion;
+	require __DIR__ . '/../app/src/controller/media.php';
+	require __DIR__ . '/../app/src/controller/jeux.php';
+	require __DIR__ . '/../app/src/modele/jeuxManager.php';
+
+	$db = new connexion('biblio', $session);
+	$manager = new jeuxManager($db);
+
+
 	if (isset($_GET['id']))
 	{
+		$id = (int) $_GET['id'];
+		$jeux = $manager->get($id);
 		require( __DIR__ . '/../app/view/jeux/show.php');
 	}
 	else
 	{
+		$listjeux = $manager->getList();
 		require( __DIR__ . '/../app/view/jeux/index.php');
 	}
 ?>
