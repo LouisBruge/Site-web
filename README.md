@@ -21,4 +21,6 @@ SOME FEATURES INCLUDED
 SOME FEATURES NOT INCLUDED YET
 =============================
 
+    * creating data form
     * Editing data
+    * delete data
