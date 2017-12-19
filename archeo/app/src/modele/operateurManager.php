@@ -1,5 +1,5 @@
 <?php
-namespace archeo\modele;
+//namespace archeo\modele;
 class operateurManager
 {
 	// déclaration des variables de connections

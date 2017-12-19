@@ -1,23 +1,3 @@
-<?php
-
-	require $_SERVER['DOCUMENT_ROOT'] . '/Archeo/app/src/controller/operateur.php';
-	require $_SERVER['DOCUMENT_ROOT'] . '/Archeo/app/src/modele/operateurManager.php';
-	require $_SERVER['DOCUMENT_ROOT'] . '/Archeo/app/src/connectiondb.php';
-
-	// paramètres de connexion
-	$db = connectiondb();
-
-	// génération de la liste
-	$manager = new operateurManager($db);
-	
-	//Transformation de la variable $_GET['id'] en $id
-	$id = (int) $_GET['id'];
-
-	// Envoi de la requête
-	$operateur = $manager->get($id);
-
-?>
-
 	<h1> <?= $operateur->operateur() ?> </h1>
 	<h2> Administratif </h2>
 	<p>
@@ -42,5 +22,4 @@
 		Mail : <?= $operateur->mail() ?><br />
 		Web : <a href="<?= $operateur->web() ?>"> <?= $operateur->web() ?> </a><br />
 	</p>
-<?php require $_SERVER['DOCUMENT_ROOT'] . '/Archeo/app/view/arrete/listByOperateur.php'; ?>
 

@@ -1,5 +1,5 @@
 <?php
-namespace archeo\controller;
+//namespace archeo\controller;
 class Operateur
 {
 	// définition des variables

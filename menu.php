@@ -53,7 +53,7 @@
 		     <li>Archéologie</li>
 			<ul id="Archeologie">
 		     		<li><a href="/archeo/public/candidature.php">Candidatures</a></li>
-		     		<li><a href="/archeo/public/formulaires.php">Formulaires</a></li>
+		     		<li><a href="/archeo/public/contact.php">Contacts</a></li>
 		     		<li><a href="/archeo/public/operateur.php">Operateur</a></li>
 			</ul>
                  </ul>

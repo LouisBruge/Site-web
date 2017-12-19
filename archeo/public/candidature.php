@@ -12,12 +12,28 @@
 	<section>
 
 <?php
+	use griselangue\core\connexion;
+
+	require __DIR__ . '/../app/src/controller/candidature.php';
+	require __DIR__ . '/../app/src/modele/candidatureManager.php';
+
+	$db = new connexion('archeo', $session);
+
+	// paramètres de connexion
+	$manager = new candidatureManager($db);
+
 	if (isset($_GET['id']))
 	{
+		//Transformation de la variable $_GET['id'] en $id
+		$id = (int) $_GET['id'];
+
+		// Envoi de la requête
+		$candidature = $manager->get($id);
 		require( __DIR__ . '/../app/view/candidature/show.php');
 	}
 	else
 	{
+		$listCandidature = $manager->getList();
 		require( __DIR__ . '/../app/view/candidature/index.php');
 	}
 ?>
