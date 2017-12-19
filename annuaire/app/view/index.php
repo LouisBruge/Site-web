@@ -14,9 +14,14 @@
 	$contacts = $manager->getList();
 
 	//print_r($contacts);
+?>
 
-	echo '<table id="contacts"> <tr> <th> ID </th> <th> Contacts </th> <th> Date de Naissance </th></tr>';
+	<table id="contacts">
+	 <tr> 	<th> ID </th>
+		 <th> Contacts </th>
+		 <th> Date de Naissance </th></tr>';
 
+<?php
 	foreach ($contacts as $contact)
 	{
 		echo '<tr>	<td><a href="/Annuaire/public/annuaire.php?id=' . $contact->id() . '"> ' . $contact->id() . '</td>
@@ -24,8 +29,5 @@
 		<td>' . date('d / m / Y', strtotime($contact->naissance())) . '</td>
 		</tr>';
 	}
-	
-	echo '</table>';
-
-
 ?>
+	</table>
