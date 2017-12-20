@@ -8,7 +8,7 @@ class notesManager
 		$this->setDb($db);
 	}
 
-	public funciton setDb($db)
+	public function setDb($db)
 	{
 		$this->_db = $db;
 	}
@@ -32,9 +32,9 @@ class notesManager
 	{
 		$notes = [];
 
-		$q = $this->_db->prepare('SELECT id, note AS text, id_operateur AS idOperateur, historique, source, web date_ajout AS dateAjout FROM notes WHERE id_operateur = :id ORDER BY date_ajout');
+		$q = $this->_db->prepare('SELECT note AS text, id_operateur AS idOperateur, historique, source, web, date_ajout AS dateAjout FROM notes WHERE id_operateur = :id');
 
-		$q->bindValue(':id', $id, PDO::PARAM_INT);
+		$q->bindParam(':id', $id, PDO::PARAM_INT);
 
 		$q->execute();
 

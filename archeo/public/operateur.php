@@ -40,6 +40,21 @@
 		// paramètres de connexion
 		$db->listByOperateur($id);
 
+		/*
+		 * Notes
+		 */
+		require (__DIR__ . '/../app/src/controller/notesController.php');
+		require __DIR__ . '/../app/src/modele/notesManager.php';
+		require __DIR__ . '/../app/src/controller/notes.php';
+
+		$notes = new notesController($session);
+		$notes->listByOperateur($id);
+
+
+		/*
+		 *  Contacts
+		 */
+
 		require __DIR__ . '/../app/src/controller/contact.php';
 		require __DIR__ . '/../app/src/modele/contactManager.php';
 		require __DIR__ . '/../app/src/controller/contactController.php';
@@ -47,6 +62,9 @@
 		$contact = new contactController($session);
 		$contact->listByOperateur($id);
 
+		/*
+		 * Candidature
+		 */
 		require __DIR__ . '/../app/src/controller/candidature.php';
 		require __DIR__ . '/../app/src/modele/candidatureManager.php';
 		require __DIR__ . '/../app/src/controller/candidatureController.php';

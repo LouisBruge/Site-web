@@ -1,16 +1,19 @@
 <?php
+
 use griselangue\core\connexion;
 
-class contactController
+class notesController
 {
-	private $_manager;
+	public $_manager;
 
 	public function __construct($session, $base = 'archeo')
 	{
 		$db = new connexion($base, $session);
-		$manager = new contactManager($db);
+		$manager = new notesManager($db);
 		$this->setManager($manager);
+
 	}
+
 
 	public function setManager($manager)
 	{
@@ -25,12 +28,14 @@ class contactController
 	public function listByOperateur($id_operateur)
 	{
 		$manager = $this->manager();
-		$listcontact = $manager->getListByOperateur($id_operateur);
+		$listnotes = $manager->getListByOperateur($id_operateur);
 
-		if (!empty ($listcontact))
+		if (!empty ($listnotes))
 		{
-			require  __DIR__ . '/../../view/contact/_list.php';
+			require __DIR__ . '/../../view/notes/_list.php';
 		}
+
+
 	}
 }
-
+?>
