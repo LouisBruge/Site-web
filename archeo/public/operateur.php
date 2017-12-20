@@ -39,6 +39,14 @@
 
 		// paramètres de connexion
 		$db->listByOperateur($id);
+
+		require __DIR__ . '/../app/src/controller/contact.php';
+		require __DIR__ . '/../app/src/modele/contactManager.php';
+		require __DIR__ . '/../app/src/controller/contactController.php';
+
+		$contact = new contactController($session);
+		$contact->listByOperateur($id);
+
 	}
 	else
 	{

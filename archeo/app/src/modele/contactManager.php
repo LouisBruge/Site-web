@@ -47,6 +47,8 @@ Class contactManager
 	public function getListByOperateur($id)
 	{
 		$id = (int) $id;
+		 
+		$contacts = [];
 
 		$q = $this->_db->prepare('SELECT id, nom, prenom, id_operateur AS operateur, poste, mail, tel, coordonnes, remarques FROM contact WHERE id_operateur = :id');
 
@@ -54,7 +56,12 @@ Class contactManager
 
 		$q->execute();
 
-		return new contact ($q -> fetch(PDO::FETCH_ASSOC));
+		while($donnees = $q->fetch(PDO::FETCH_ASSOC))
+		{
+			$contacts[] = new contact($donnees);
+		}
+
+		return $contacts;
 
 	}
 
