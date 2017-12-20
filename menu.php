@@ -40,8 +40,8 @@
                  <ul id="tabs">
 		     <li> Annuaire </li>
 			<ul id="annuaire">
-		 <!--    		<li><a href="/annuaire/public/annuaire.php">Liste</a></li> --!>
-				<li><a href="/annuaire/public/formulaire.php">Formulaire</a></li>
+		    		<li><a href="/annuaire/public/annuaire.php">Liste</a></li> 
+			<!--	<li><a href="/annuaire/public/formulaire.php">Formulaire</a></li> --!>
 			</ul>
 		     <li>Inventaires</li>
 			<ul id="inventaires">
