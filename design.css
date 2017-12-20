@@ -154,6 +154,10 @@ main {
 
 }
 
+section {
+	padding: 0.25%;
+}
+
 .main-test {
 	flex: 1 1 auto;
 }
