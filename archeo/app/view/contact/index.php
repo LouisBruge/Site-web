@@ -8,6 +8,8 @@
 <?php
 	foreach($listcontact as $contact)
 	{
+		echo '<pre>';
+		echo '</pre>';
 		echo '<tr><td><a href="/archeo/public/contact.php?id=' . $contact->id() . '"> ' . $contact->id() . '</td>
 			<td>' . $contact->nom() . '</td>
 			<td>' . $contact->prenom() . '</td>

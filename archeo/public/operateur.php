@@ -24,12 +24,37 @@
 
 	if (isset($_GET['id']))
 	{
-	//Transformation de la variable $_GET['id'] en $id
-	$id = (int) $_GET['id'];
+		//Transformation de la variable $_GET['id'] en $id
+		$id = (int) $_GET['id'];
 
-	// Envoi de la requête
-	$operateur = $manager->get($id);
+		// Envoi de la requête
+		$operateur = $manager->get($id);
 		require( __DIR__ . '/../app/view/operateur/show.php');
+	
+		require __DIR__ . '/../app/src/controller/arrete.php';
+		require __DIR__ . '/../app/src/modele/arreteManager.php';
+		require __DIR__ . '/../app/src/controller/arreteController.php';
+
+		$db = new arreteController($session);
+
+		// paramètres de connexion
+		$db->listByOperateur($id);
+
+		require __DIR__ . '/../app/src/controller/contact.php';
+		require __DIR__ . '/../app/src/modele/contactManager.php';
+		require __DIR__ . '/../app/src/controller/contactController.php';
+
+		$contact = new contactController($session);
+		$contact->listByOperateur($id);
+
+		require __DIR__ . '/../app/src/controller/candidature.php';
+		require __DIR__ . '/../app/src/modele/candidatureManager.php';
+		require __DIR__ . '/../app/src/controller/candidatureController.php';
+
+		$candidature = new candidatureController($session);
+		$candidature->listByOperateur($id);
+
+
 	}
 	else
 	{

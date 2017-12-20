@@ -62,6 +62,26 @@ Class candidatureManager
 		return $candidatures;
 	}
 
+	public function getListByOperateur($id_operateur)
+	{
+		$id_operateur = (int) $id_operateur;
+
+		$candidatures = [];
+		
+		$q = $this->_db->prepare('SELECT id, id_operateur AS operateur, id_contact AS contact, poste, spontannee, date_envoi, n_annonce FROM candidature WHERE id_operateur = :id_operateur ');
+
+		$q->bindParam(':id_operateur', $id_operateur, PDO::PARAM_INT);
+
+		$q->execute();
+
+		while($donnees = $q->fetch(PDO::FETCH_ASSOC))
+		{
+			$candidatures[] = new candidature($donnees);
+		}
+
+		return $candidatures;
+	}
+
 	public function destroy(candidature $candidature)
 	{
 		$q = $this->_db->exec('DELETE FROM candidature WHERE id = ' . $candidature->id());
