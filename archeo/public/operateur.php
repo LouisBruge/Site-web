@@ -47,6 +47,14 @@
 		$contact = new contactController($session);
 		$contact->listByOperateur($id);
 
+		require __DIR__ . '/../app/src/controller/candidature.php';
+		require __DIR__ . '/../app/src/modele/candidatureManager.php';
+		require __DIR__ . '/../app/src/controller/candidatureController.php';
+
+		$candidature = new candidatureController($session);
+		$candidature->listByOperateur($id);
+
+
 	}
 	else
 	{
