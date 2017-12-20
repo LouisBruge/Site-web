@@ -7,7 +7,6 @@
 	<?php
 		require ($_SERVER['DOCUMENT_ROOT'] . '/core/autoloader.php');
 		griselangue\core\autoLoader::register();
-		$session = new	griselangue\core\session($_SESSION['login'], $_SESSION['password']);
 	?>
 
 
