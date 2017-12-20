@@ -15,6 +15,7 @@
 		<?php
 			if(isset($_SESSION['login']) && isset($_SESSION['password']))
 			{
+				$session = new griselangue\core\session($_SESSION['login'], $_SESSION['password']);
 				echo '<a href="/Login/login.php">' . $_SESSION['login'] . '</a>'; 
 			}
 			else
