@@ -24,12 +24,21 @@
 
 	if (isset($_GET['id']))
 	{
-	//Transformation de la variable $_GET['id'] en $id
-	$id = (int) $_GET['id'];
+		//Transformation de la variable $_GET['id'] en $id
+		$id = (int) $_GET['id'];
 
-	// Envoi de la requête
-	$operateur = $manager->get($id);
+		// Envoi de la requête
+		$operateur = $manager->get($id);
 		require( __DIR__ . '/../app/view/operateur/show.php');
+	
+		require __DIR__ . '/../app/src/controller/arrete.php';
+		require __DIR__ . '/../app/src/modele/arreteManager.php';
+		require __DIR__ . '/../app/src/controller/arreteController.php';
+
+		$db = new arreteController($session);
+
+		// paramètres de connexion
+		$db->listByOperateur($id);
 	}
 	else
 	{
