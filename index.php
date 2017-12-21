@@ -8,6 +8,8 @@ session_start();
 		<head>
 			<title>	INDEX - LOCALHOST</title>
 			<meta charset="utf-8">
+			<script src='core/js/jquery-3.2.1.js' /> </script>
+			<script src='core/js/script.js' /> </script>
 			<link rel="stylesheet" href="design.css" type="text/css" media="screen" />
 		</head>
 		<body>
