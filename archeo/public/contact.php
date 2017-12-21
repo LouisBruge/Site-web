@@ -22,7 +22,22 @@
 
 	$manager = new contactManager($db);
 
-	if (isset($_GET['id']))
+	if ($_SERVER['REQUEST_METHOD'] === "POST")
+	{
+		$contact = new contact($_POST);
+
+		try{
+			$manager->create($contact);
+		}
+		catch (Excpetion $e)
+		{
+			echo $e->getMessage();
+		}
+		require( __DIR__ . '/../app/view/contact/show.php');
+
+
+	}
+	elseif (isset($_GET['id']))
 	{
 		//Transformation de la variable $_GET['id'] en $id
 		$id = (int) $_GET['id'];

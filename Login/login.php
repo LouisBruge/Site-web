@@ -1,18 +1,6 @@
 <?php
 session_start(); 
-use griselangue\core\autoloader;
-use griselangue\core\session;
-
-require __DIR__ . '/../core/autoloader.php';
-
-autoLoader::register();
-if(isset($_POST['login']) && isset($_POST['password']))
-{
-	$user = new session($_POST['login'], $_POST['password']);
-	$user->setSession();
-}
 ?>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -22,7 +10,18 @@ if(isset($_POST['login']) && isset($_POST['password']))
 </head>
 			<?php include(__DIR__ . "/../menu.php") ; ?>
 <body>
-	<p>
+<?php	
+//require __DIR__ . '/../core/autoloader.php';
+
+//autoLoader::register();
+if(isset($_POST['login']) && isset($_POST['password']))
+{
+	$user = new session($_POST['login'], $_POST['password']);
+	$user->setSession();
+}
+?>
+
+<p>
 		<section>
 
 	<h1> Page de membre </h1>

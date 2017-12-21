@@ -1,5 +1,5 @@
 <!-- formulaire pour les opérateurs en archéologie -->
-	<form method="post" action="/Archeo/app/view/operateur/new.php" id="operateur">
+	<form method="post" action="/archeo/public/operateur.php" id="operateur">
 	<h2> Enregistrement des opérateurs archéologiques </h2>
 	<fieldset>
 	<legend> Administratif </legend>
