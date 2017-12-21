@@ -21,8 +21,20 @@
 	// paramètres de connexion
 	$manager = new operateurManager($db);
 
+	if ($_SERVER['REQUEST_METHOD'] === "POST")
+	{
+		$operateur = new operateur($_POST);
+		try {
+			$manager->create($operateur);
+		}
+		catch (Excpetion $e)
+		{
+			echo $e->getMessage();
+		}
 
-	if (isset($_GET['id']))
+		require( __DIR__ . '/../app/view/operateur/show.php');
+	}
+	elseif(isset($_GET['id']))
 	{
 		//Transformation de la variable $_GET['id'] en $id
 		$id = (int) $_GET['id'];

@@ -21,6 +21,11 @@ class operateurManager
 
 	public function create(Operateur $operateur)
 	{
+		try
+		{
+		echo '<pre>';
+		var_dump($operateur);
+		echo '</pre>';
 		$q = $this->_db->prepare('INSERT INTO operateur (nom_operateur, abrev, secteur, statut_juridique, activite, siren, personnel_min, personnel_max, service, batiment, numero_siege, addresse, complement_addresse, boite_postale, code_postal, ville, code_cedex, departement, region, mail, web, telephone, date_creation) VALUES (:operateur, :abrev, :secteur, :statut_juridique, :activite, :siren, :personnel_min, :personnel_max, :service, :batiment, :numero_siege, :addresse, :complement_addresse, :boite_postale, :code_postal, :ville, :code_cedex, :departement, :region, :mail, :web, :telephone, :date_creation);');
 
 		$q->bindValue('operateur', $operateur->operateur());
@@ -36,10 +41,10 @@ class operateurManager
 		$q->bindValue('numero_siege', $operateur->numero_siege());
 		$q->bindValue('addresse', $operateur->addresse());
 		$q->bindValue('complement_addresse', $operateur->complement_addresse());
-		$q->bindValue('boite_postale', $operateur->boite_postale(), PDO::PARAM_INT);
+		$q->bindValue('boite_postale', $operateur->boite_postale());
 		$q->bindValue('code_postal', $operateur->code_postal(), PDO::PARAM_INT);
 		$q->bindValue('ville', $operateur->ville());
-		$q->bindValue('cedex', $operateur->cedex());
+		$q->bindValue('code_cedex', $operateur->code_cedex());
 		$q->bindValue('departement', $operateur->departement());
 		$q->bindValue('region', $operateur->region());
 		$q->bindValue('mail', $operateur->mail());
@@ -48,6 +53,12 @@ class operateurManager
 		$q->bindValue('date_creation', $operateur->date_creation(), PDO::PARAM_INT);
 
 		$q->execute();
+		}
+		catch (PDOException $e)
+		{
+			echo 'Exception : '. $e->getMessage() . '\n';
+		}
+
 	}
 
 	public function get($id)
