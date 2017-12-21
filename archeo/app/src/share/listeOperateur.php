@@ -1,9 +1,7 @@
 <?php
-require  $_SERVER['DOCUMENT_ROOT'] . '/Archeo/app/src/modele/operateurShortManager.php';
-require $_SERVER['DOCUMENT_ROOT'] . '/Archeo/app/src/controller/operateurShort.php';
-require $_SERVER['DOCUMENT_ROOT'] . '/Archeo/app/src/connectiondb.php';
+require  $_SERVER['DOCUMENT_ROOT'] . '/archeo/app/src/modele/operateurShortManager.php';
+require $_SERVER['DOCUMENT_ROOT'] . '/archeo/app/src/controller/operateurShort.php';
 
-$db = connectiondb();
 
 $manager = new operateurShortManager($db);
 

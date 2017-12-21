@@ -1,9 +1,17 @@
-        <form method="post" action="/Archeo/FONCTION-ENREG/candidature-enregist.php" id="candidature">
+<?php
+
+	session_start();
+	include($_SERVER['DOCUMENT_ROOT'].'/menu.php'); //ajout du menu dans le texte 
+	use griselangue\core\connexion;
+
+	$db = new connexion('archeo', $session);
+?>
+        <form method="post" action="/archeo/public/candidature.php" id="candidature">
         <h2> Enregistrement des candidatures</h2> <br />
 	<fieldset> <legend> Service </legend>
 		<?php 
-	require $_SERVER['DOCUMENT_ROOT'] . '/Archeo/app/src/share/listeOperateur.php';
-	require $_SERVER['DOCUMENT_ROOT'] . '/Archeo/app/src/share/listeContact.php';
+	require $_SERVER['DOCUMENT_ROOT'] . '/archeo/app/src/share/listeOperateur.php';
+	require $_SERVER['DOCUMENT_ROOT'] . '/archeo/app/src/share/listeContact.php';
 			?>
 		poste : <input type = "text" name="poste" />
 		numéro d'annonce : <input type="text" name="n_annonce" />

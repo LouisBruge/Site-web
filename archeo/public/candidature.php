@@ -22,7 +22,15 @@
 	// paramètres de connexion
 	$manager = new candidatureManager($db);
 
-	if (isset($_GET['id']))
+	if ($_SERVER['REQUEST_METHOD'] === "POST")
+	{
+		$candidature = new candidature($_POST);
+		require( __DIR__ . '/../app/view/candidature/show.php');
+
+		$manager->create($candidature);
+
+	}
+	elseif (isset($_GET['id']))
 	{
 		//Transformation de la variable $_GET['id'] en $id
 		$id = (int) $_GET['id'];
