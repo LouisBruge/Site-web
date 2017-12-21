@@ -23,7 +23,15 @@
 
 	$manager = new filmManager($db);
 
-	if (isset($_GET['id']))
+	if ($_SERVER['REQUEST_METHOD'] === 'POST')
+	{
+		$film = new film($_POST);
+		require( __DIR__ . '/../app/view/film/show.php');
+		$manager->create($film);
+
+	}
+
+	elseif (isset($_GET['id']))
 	{
 		$id = (int) $_GET['id'];
 		$film = $manager->get($id);

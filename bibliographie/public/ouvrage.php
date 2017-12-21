@@ -21,7 +21,13 @@
 	$manager = new ouvrageManager($db);
 
 
-	if (isset($_GET['id']))
+	if ($_SERVER['REQUEST_METHOD'] === 'POST')
+	{
+		$ouvrage= new ouvrage($_POST);
+		require( __DIR__ . '/../app/view/ouvrage/show.php');
+		$manager->create($ouvrage);
+	}
+	elseif (isset($_GET['id']))
 	{
 		$id = (int) $_GET['id'];
 		$ouvrage = $manager->get($id);
