@@ -22,7 +22,13 @@
 	$manager = new jeuxManager($db);
 
 
-	if (isset($_GET['id']))
+	if ($_SERVER['REQUEST_METHOD'] === 'POST')
+	{
+		$jeux = new jeux($_POST);
+		require( __DIR__ . '/../app/view/jeux/show.php');
+		$manager->create($jeux);
+	}
+	elseif (isset($_GET['id']))
 	{
 		$id = (int) $_GET['id'];
 		$jeux = $manager->get($id);

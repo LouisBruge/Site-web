@@ -17,7 +17,7 @@ class ouvrageManager
 	public function create(ouvrage $ouvrage)
 	{
 		try{
-			$q = $this->_db->prepare('INSERT INTO ouvrage (auteur, titre, editeur, date, ville_edition, collection, commentaire) VALUES (:auteur, :titre, :editeur, :date, :ville_edition, :collection, :commentaire');
+			$q = $this->_db->prepare('INSERT INTO ouvrage (auteur, titre, editeur, date, ville_edition, collection) VALUES (:auteur, :titre, :editeur, :date, :ville_edition, :collection)');
 
 
 			$q->bindValue(':auteur', $ouvrage->auteur());
@@ -25,13 +25,13 @@ class ouvrageManager
 			$q->bindValue(':editeur', $ouvrage->editeur());
 			$q->bindValue('date', $ouvrage->annee());
 			$q->bindValue('ville_edition',$ouvrage->ville());
-			$q->bindValue('collection', $ouvrage->commentaire());
+			$q->bindValue('collection', $ouvrage->collection());
 
 			$q->execute();
 		}
-		catch (Exception $e)
+		catch (PDOException $e)
 		{
-			$e->getMessages();
+			echo $e->getMessage();
 		}
 	}
 
