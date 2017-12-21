@@ -48,7 +48,7 @@
 				<li><a href="/bibliographie/public/film.php"/>Films</a></li>
 				<li><a href="/bibliographie/public/jeux.php"/>Jeux</a></li>
 				<li><a href="/bibliographie/public/ouvrage.php"/>Ouvrages</a></li>
-                		<!-- <li><a href="/bibliographie/public/formulaires.php">Formulaires</a></li> --!>
+                		<li><a href="/bibliographie/public/formulaires.php">Formulaires</a></li> 
 			</ul>
 		     <li>Archéologie</li>
 			<ul id="Archeologie">

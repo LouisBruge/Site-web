@@ -10,10 +10,9 @@
         <?php include($_SERVER['DOCUMENT_ROOT'].'/menu.php'); //ajout du menu dans le texte ?>
         <p>
 	<section>
-        <?php include($_SERVER['DOCUMENT_ROOT'].'/Archeo/app/view/form/operateur.php');?>
-        <?php include($_SERVER['DOCUMENT_ROOT'].'/Archeo/app/view/form/candidature.php');?>
-        <?php include($_SERVER['DOCUMENT_ROOT'].'/Archeo/app/view/form/contact.php');?>
-        <?php include($_SERVER['DOCUMENT_ROOT'].'/Archeo/app/view/form/arrete.php');?>
+        <?php include($_SERVER['DOCUMENT_ROOT'].'/archeo/app/view/operateur/_form.php');?>
+        <?php include($_SERVER['DOCUMENT_ROOT'].'/archeo/app/view/candidature/_form.php');?>
+        <?php include($_SERVER['DOCUMENT_ROOT'].'/archeo/app/view/contact/_form.php');?>
 	</section>
        </p>
 </main>
