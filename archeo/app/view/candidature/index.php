@@ -10,7 +10,7 @@
 	foreach($listCandidature as $candidature)
 	{
 		echo '<tr><td> <a href="/archeo/public/candidature.php?id=' . $candidature->id() .'">' . $candidature->id() . '</td>
-				<td>' . date('d/m/y', strtotime($candidature->date_envoi())) . '</td> 
+				<td>' . date('d-m-Y', strtotime($candidature->date_envoi())) . '</td> 
 				<td>' . $candidature->n_annonce() . '</td>
 				<td>' . $candidature->operateur() . '</td>
 				<td>' . $candidature->poste() . '</td>

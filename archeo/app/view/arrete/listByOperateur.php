@@ -17,7 +17,7 @@
 	foreach($Listarretes as $arrete)
 			{
 ?>
-	<tr> <td> <?= $arrete->annee() ?> </td>
+	<tr> <td> <?= date('d-m-Y', strtotime($arrete->annee())) ?> </td>
 		<td> <?=  $arrete->fouille() ?> </td>
 		<td> <?=  $arrete->diagnostic() ?> </td>
 		<td> <?=  $arrete->paleolithique() ?> </td>

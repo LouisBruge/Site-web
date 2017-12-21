@@ -6,7 +6,7 @@
 			{
 ?>
 	<li>
-	<?= date('d/m/y', strtotime($candidature->date_envoi())) ?> : <?= $candidature->poste(); ?> <?= $candidature->n_annonce?> 
+	<?= date('d-m-Y', strtotime($candidature->date_envoi())) ?> : <?= $candidature->poste(); ?> <?= $candidature->n_annonce?> 
 	</li>			
 <?php
 		}

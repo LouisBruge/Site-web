@@ -8,7 +8,7 @@
 	{
 		echo '<tr>	<td><a href="/annuaire/public/annuaire.php?id=' . $contact->id() . '"> ' . $contact->id() . '</td>
 		<td> <strong>' . $contact->nom() . '</strong> '. $contact->prenom() . '</td>
-		<td>' . date('d / m / Y', strtotime($contact->naissance())) . '</td>
+		<td>' . date('d-m-Y', strtotime($contact->naissance())) . '</td>
 		</tr>';
 	}
 ?>

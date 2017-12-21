@@ -6,7 +6,7 @@ foreach($listnotes as $notes)
 ?>
 	<?=$notes->text();?> <br />
 	<cite> 
-	<?= $notes->source(); ?> <?= $notes->web(); ?> (consulté le <?= $notes->dateAjout() ?> )
+	<?= $notes->source(); ?> <?= $notes->web(); ?> (consulté le <?= date('j-m-Y', strtotime($notes->dateAjout())) ?> )
 	</cite>
 <br />
 <?php
