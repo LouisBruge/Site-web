@@ -16,7 +16,7 @@ session_start();
 //autoLoader::register();
 if(isset($_POST['login']) && isset($_POST['password']))
 {
-	$user = new session($_POST['login'], $_POST['password']);
+	$user = new \griselangue\core\session($_POST['login'], $_POST['password']);
 	$user->setSession();
 }
 ?>
