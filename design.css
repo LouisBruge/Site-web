@@ -122,9 +122,16 @@ header h1  {
 	background-color: #000;
 }
 
+#menu h2 {
+	color: #FFF;
+	font-size: 1.5em;
+	line-height: 0em;
+	padding: 0 0 0 5%;
+}
+
 #menu ul {
     list-style: none;
-    padding: 0 0 0 9%;
+    padding: 0 0 0 5%;
     color: #FFF;
 }
 
@@ -133,15 +140,15 @@ header h1  {
 }
 
 #menu #Archeologie li {
-    padding: 0 0 0 2%;
+    padding: 0 0 0 15%;
 }
 
 #menu #inventaires li{
-    padding: 0 0 0 2%;
+    padding: 0 0 0 15%;
 }
 
 #menu #annuaire li{
-    padding: 0 0 0 2%;
+    padding: 0 0 0 15%;
 }
 
 /* 

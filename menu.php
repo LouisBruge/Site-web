@@ -36,6 +36,8 @@
 <main>
 
         <nav id="menu">
+	<!--	<img class="menu-trigger" src="/img/menu.jpg" alt="menu image" height="50" width="50"></img> --!>
+		<h2 class="menu-trigger"> Menu </h2>
             <div class="element_menu">
                  <ul id="tabs">
 		     <li> Annuaire </li>
