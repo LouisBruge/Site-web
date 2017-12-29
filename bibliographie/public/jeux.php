@@ -18,6 +18,11 @@
 	require __DIR__ . '/../app/src/controller/jeux.php';
 	require __DIR__ . '/../app/src/modele/jeuxManager.php';
 
+
+	// requête pour les proprios
+	require __DIR__ . '/../app/src/modele/proprietaireManager.php';
+	require __DIR__ . '/../app/src/controller/proprietaire.php';
+
 	$db = new connexion('biblio', $session);
 	$manager = new jeuxManager($db);
 
@@ -33,6 +38,11 @@
 		$id = (int) $_GET['id'];
 		$jeux = $manager->get($id);
 		require( __DIR__ . '/../app/view/jeux/show.php');
+
+		$managerproprio = new proprietaireManager($db);
+		$listproprietaires = $managerproprio->getListByMedia('jeux', $id);
+		require( __DIR__ . '/../app/view/proprietaire/_list.php');
+
 	}
 	else
 	{

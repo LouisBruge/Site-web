@@ -19,6 +19,10 @@
 	require __DIR__ . '/../app/src/controller/film.php';
 	require __DIR__ . '/../app/src/modele/filmManager.php';
 
+	// requête pour les proprios
+	require __DIR__ . '/../app/src/modele/proprietaireManager.php';
+	require __DIR__ . '/../app/src/controller/proprietaire.php';
+
 	$db = new connexion('biblio', $session);
 
 	$manager = new filmManager($db);
@@ -36,6 +40,11 @@
 		$id = (int) $_GET['id'];
 		$film = $manager->get($id);
 		require( __DIR__ . '/../app/view/film/show.php');
+
+		$managerproprio = new proprietaireManager($db);
+		$listproprietaires = $managerproprio->getListByMedia('film', $id);
+		require( __DIR__ . '/../app/view/proprietaire/_list.php');
+
 	}
 	else
 	{

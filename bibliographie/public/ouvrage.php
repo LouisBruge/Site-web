@@ -16,6 +16,11 @@
 	require __DIR__ . '/../app/src/controller/ouvrage.php';
 	require __DIR__ . '/../app/src/modele/ouvrageManager.php';
 
+
+	// requête pour les proprios
+	require __DIR__ . '/../app/src/modele/proprietaireManager.php';
+	require __DIR__ . '/../app/src/controller/proprietaire.php';
+
 	use griselangue\core\connexion;
 	$db = new connexion('biblio', $session);
 	$manager = new ouvrageManager($db);
@@ -32,6 +37,11 @@
 		$id = (int) $_GET['id'];
 		$ouvrage = $manager->get($id);
 		require( __DIR__ . '/../app/view/ouvrage/show.php');
+
+		$managerproprio = new proprietaireManager($db);
+		$listproprietaires = $managerproprio->getListByMedia('ouvrage', $id);
+		require( __DIR__ . '/../app/view/proprietaire/_list.php');
+
 	}
 	else
 	{
