@@ -40,7 +40,10 @@
 
 		$managerproprio = new proprietaireManager($db);
 		$listproprietaires = $managerproprio->getListByMedia('ouvrage', $id);
-		require( __DIR__ . '/../app/view/proprietaire/_list.php');
+		if(!empty($listproprietaires))
+		{
+			require( __DIR__ . '/../app/view/proprietaire/_list.php');
+		}
 
 		// requête pour les genres 
 		require __DIR__ . '/../app/src/modele/genreManager.php';
@@ -48,7 +51,11 @@
 
 		$managergenre= new genreManager($db);
 		$listgenre= $managergenre->getListBymediaAndId('ouvrage', $id);
-		require( __DIR__ . '/../app/view/genre/_list.php');
+
+		if(!empty($listgenre))
+		{
+			require( __DIR__ . '/../app/view/genre/_list.php');
+		}
 
 		// requête pour les supports 
 		require __DIR__ . '/../app/src/modele/supportManager.php';
@@ -56,7 +63,10 @@
 
 		$managersupport= new supportManager($db);
 		$listsupport= $managersupport->getListByMedia('ouvrage', $id);
-		require( __DIR__ . '/../app/view/support/_list.php');
+		if(!empty($listsupport))
+		{
+			require( __DIR__ . '/../app/view/support/_list.php');
+		}
 
 
 

@@ -47,12 +47,18 @@
 
 		$managerproprio = new proprietaireManager($db);
 		$listproprietaires = $managerproprio->getListByMedia('film', $id);
-		require( __DIR__ . '/../app/view/proprietaire/_list.php');
+		if(!empty($listproprietaires))
+		{
+			require( __DIR__ . '/../app/view/proprietaire/_list.php');
+		}
 
 
 		$managergenre= new genreManager($db);
 		$listgenre= $managergenre->getListBymediaAndId('film', $id);
-		require( __DIR__ . '/../app/view/genre/_list.php');
+		if(!empty($listgenre))
+		{
+			require( __DIR__ . '/../app/view/genre/_list.php');
+		}
 
 		// requête pour les supports 
 		require __DIR__ . '/../app/src/modele/supportManager.php';
@@ -60,7 +66,10 @@
 
 		$managersupport= new supportManager($db);
 		$listsupport= $managersupport->getListByMedia('film', $id);
-		require( __DIR__ . '/../app/view/support/_list.php');
+		if(!empty($listsupport))
+		{
+			require( __DIR__ . '/../app/view/support/_list.php');
+		}
 
 	}
 	else
