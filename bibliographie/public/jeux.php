@@ -53,6 +53,15 @@
 		$listgenre= $managergenre->getListBymediaAndId('jeux', $id);
 		require( __DIR__ . '/../app/view/genre/_list.php');
 
+		// requête pour les supports 
+		require __DIR__ . '/../app/src/modele/supportManager.php';
+		require __DIR__ . '/../app/src/controller/support.php';
+
+		$managersupport= new supportManager($db);
+		$listsupport= $managersupport->getListByMedia('jeux', $id);
+		require( __DIR__ . '/../app/view/support/_list.php');
+
+
 	}
 	else
 	{
