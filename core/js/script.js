@@ -1,11 +1,14 @@
 $(document).ready(
 	function() {
 		console.log('Fichier chargé');
+	
+		// masque les liens du menu
+		$(".submenu").hide();
 
-		// menu rétractable
-		$('.menu-trigger').on('click', function() { 
-			console.log('Click');
-			$('.element_menu').toggle();}
-		)
+		// liens rétractables dans le menu
+		$('#tabs').children('li').on('click', function() {
+			$(this).next(".submenu").toggle();
+		});
+
 	});
 

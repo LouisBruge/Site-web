@@ -37,23 +37,22 @@
 
         <nav id="menu">
 	<!--	<img class="menu-trigger" src="/img/menu.jpg" alt="menu image" height="50" width="50"></img> --!>
-		<h2 class="menu-trigger"> Menu </h2>
             <div class="element_menu">
                  <ul id="tabs">
 		     <li> Annuaire </li>
-			<ul id="annuaire">
+			<ul class="submenu">
 		    		<li><a href="/annuaire/public/annuaire.php">Liste</a></li> 
 			<!--	<li><a href="/annuaire/public/formulaire.php">Formulaire</a></li> --!>
 			</ul>
 		     <li>Inventaires</li>
-			<ul id="inventaires">
+			<ul class="submenu">
 				<li><a href="/bibliographie/public/film.php"/>Films</a></li>
 				<li><a href="/bibliographie/public/jeux.php"/>Jeux</a></li>
 				<li><a href="/bibliographie/public/ouvrage.php"/>Ouvrages</a></li>
                 		<li><a href="/bibliographie/public/formulaires.php">Formulaires</a></li> 
 			</ul>
 		     <li>Archéologie</li>
-			<ul id="Archeologie">
+			<ul class="submenu">
 		     		<li><a href="/archeo/public/candidature.php">Candidatures</a></li>
 		     		<li><a href="/archeo/public/contact.php">Contacts</a></li>
 		     		<li><a href="/archeo/public/operateur.php">Operateur</a></li>

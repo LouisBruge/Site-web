@@ -139,17 +139,12 @@ header h1  {
 	color: #FFF;
 }
 
-#menu #Archeologie li {
-    padding: 0 0 0 15%;
+#menu .submenu li {
+	/*display: none; */
+	padding: 0 0 0 15%;
 }
 
-#menu #inventaires li{
-    padding: 0 0 0 15%;
-}
 
-#menu #annuaire li{
-    padding: 0 0 0 15%;
-}
 
 /* 
  * #### Organisation de la partie principale du site
