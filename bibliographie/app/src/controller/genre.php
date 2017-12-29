@@ -6,17 +6,17 @@
             $_abreviation,
             $_film,
             $_ouvrage,
-            $_jeux,
+            $_jeux;
 
 
-            public function id() {  return $this->_id   }
-            public function nom() {  return $this->_nom   }
-            public function abreviation() {  return $this->_abreviation   }
-            public function film() {  return $this->_film   }
-            public function ouvrage() {  return $this->_ouvrage   }
-            public function jeux() {  return $this->_jeux   }
+            public function id() {  return $this->_id;  }
+            public function nom() {  return $this->_nom;   }
+            public function abreviation() {  return $this->_abreviation;   }
+            public function film() {  return $this->_film;   }
+            public function ouvrage() {  return $this->_ouvrage;   }
+            public function jeux() {  return $this->_jeux;   }
 
-            public __construct (array $donnee)
+            public function __construct (array $donnee)
             {
                 $this->hydrate($donnee);
             }

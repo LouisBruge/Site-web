@@ -1,5 +1,5 @@
 <?php 
-namespace bibliographie\modele;
+//namespace bibliographie\modele;
 class genreManager
 {
 	private $_db;
@@ -9,7 +9,7 @@ class genreManager
 		$this->setDb($db);
 	}
 
-	private function setDb(connexion $db)
+	private function setDb(PDO $db)
 	{
 		$this->_db = $db;
 	}
@@ -51,6 +51,26 @@ class genreManager
 		$q = $this->_db->prepare('SELECT id, nom, abreviation FROM genre WHERE :media IS NOT NULL');
 
 		$q->bindParam(':media', $media);
+
+		$q->execute();
+
+		while($donnee = $q->fetch(PDO::FETCH_ASSOC))
+		{
+			$genres[] = new genre ($donnee);
+		}
+
+		return $genres;
+		
+	}
+
+	public function getListBymediaAndId(string $media, int $id_media)
+	{
+		$genres = [];
+
+		$requete = "SELECT g.id, g.nom, g.abreviation FROM genre AS g LEFT JOIN genre_" . $media . " AS pm ON pm.id_genre = g.id WHERE pm.id_" . $media . " = :id;";
+		$q = $this->_db->prepare($requete);
+
+		$q->bindParam(':id', $id_media);
 
 		$q->execute();
 

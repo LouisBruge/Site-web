@@ -23,6 +23,10 @@
 	require __DIR__ . '/../app/src/modele/proprietaireManager.php';
 	require __DIR__ . '/../app/src/controller/proprietaire.php';
 
+	// requête pour les genres 
+	require __DIR__ . '/../app/src/modele/genreManager.php';
+	require __DIR__ . '/../app/src/controller/genre.php';
+
 	$db = new connexion('biblio', $session);
 
 	$manager = new filmManager($db);
@@ -44,6 +48,11 @@
 		$managerproprio = new proprietaireManager($db);
 		$listproprietaires = $managerproprio->getListByMedia('film', $id);
 		require( __DIR__ . '/../app/view/proprietaire/_list.php');
+
+
+		$managergenre= new genreManager($db);
+		$listgenre= $managergenre->getListBymediaAndId('film', $id);
+		require( __DIR__ . '/../app/view/genre/_list.php');
 
 	}
 	else

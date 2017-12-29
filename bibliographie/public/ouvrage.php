@@ -42,6 +42,15 @@
 		$listproprietaires = $managerproprio->getListByMedia('ouvrage', $id);
 		require( __DIR__ . '/../app/view/proprietaire/_list.php');
 
+		// requête pour les genres 
+		require __DIR__ . '/../app/src/modele/genreManager.php';
+		require __DIR__ . '/../app/src/controller/genre.php';
+
+		$managergenre= new genreManager($db);
+		$listgenre= $managergenre->getListBymediaAndId('ouvrage', $id);
+		require( __DIR__ . '/../app/view/genre/_list.php');
+
+
 	}
 	else
 	{
