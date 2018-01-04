@@ -8,7 +8,7 @@ class autoLoader
 	{
 		$class = str_replace('griselangue\\', '', $class);
 		$class = str_replace('\\', '/', $class);
-		require ( '/srv/http/' . $class . '.php');
+		require ( '/mnt/Documents/git/Site-web/' . $class . '.php');
 	}
 
 	static function register()

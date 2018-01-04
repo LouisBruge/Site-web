@@ -5,7 +5,7 @@
 
 <!-- chargement de l'autoloader --!>
 	<?php
-		require ('/srv/http/core/autoloader.php');
+		require ($_SERVER['DOCUMENT_ROOT'] . '/core/autoloader.php');
 		griselangue\core\autoLoader::register();
 	?>
 
