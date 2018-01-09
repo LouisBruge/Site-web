@@ -6,33 +6,36 @@ class session
     private $_login,
         $_password;
 
-    public function __construct ($login, $password)
+    /*
+     * Constructeur
+     *
+     */
+    public function __construct (string $login, string $password)
     {
         	$this->setLogin($login);
 		$this->setPassword($password);
     }
 
-    public function setLogin($login)
+    /*
+     *
+     * Setter
+     *
+     */
+    public function setLogin(string $login)
     {
         $this->_login = htmlspecialchars($login);
     }
 
-    public function setPassword($password)
+    public function setPassword(string $password)
     {
         $this->_password = htmlspecialchars($password);
     }
 
-    public function destroy()
-    {
-        session_destroy();
-    } 
-
-    public function setSession()
-    {
-        $_SESSION['login'] = $this->login();
-        $_SESSION['password'] = $this->password();
-    }
-
+    /*
+     *
+     *  Getter
+     *
+     */
     public function login()
     {
 	    return $this->_login;
@@ -42,6 +45,29 @@ class session
     {
 	    return $this->_password;
     }
+ 
+    /*
+     *
+     * Destructor
+     *
+     */
+    public function destroy()
+    {
+        session_destroy();
+    } 
+
+    /*
+     *
+     * Initialisaton de la session PHP
+     *
+     */
+ 
+    public function setSession()
+    {
+        $_SESSION['login'] = $this->login();
+        $_SESSION['password'] = $this->password();
+    }
+  
 }
 
 ?>

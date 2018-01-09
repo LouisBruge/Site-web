@@ -18,7 +18,13 @@ Class connexion extends PDO
 		}
 	}
 
-	private function setDsn($dsn)
+        /*
+         *
+         *function qui renvoi une variable string, avec l'host et le nom de la base de donnéee
+         *
+         */
+
+	private function setDsn(string $dsn)
 	{
 		$this->_dsn = "pgsql:host=localhost;dbname=" . $dsn;
 		//echo $dsn;

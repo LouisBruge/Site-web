@@ -4,7 +4,12 @@ namespace griselangue\core;
 
 class autoLoader
 {
-	static function autoload($class)
+    /*
+     *
+     * Function d'autoloader
+     *
+     */
+	static function autoload(string $class)
 	{
 		$class = str_replace('griselangue\\', '', $class);
 		$class = str_replace('\\', '/', $class);
