@@ -1,4 +1,5 @@
 <?php
+namespace griselangue\annuaire\app\src\contact
 class contact
 {
 
@@ -63,23 +64,24 @@ class contact
 
 
 	// Setters
-	public function setId($id)
+	public function setId(int $id)
 	{
 		$this -> _id = $id;
 	}
 
-	public function setNom($nom)
+	public function setNom(string $nom)
 	{
 		$this ->_nom = $nom;
 	}
 
-	public function setPrenom($prenom)
+	public function setPrenom(string $prenom)
 	{
 		$this ->_prenom = $prenom;
 	}
 
 	public function setNaissance($naissance)
 	{
+        
 		$this ->_naissance = $naissance;
 	}
 
@@ -90,7 +92,7 @@ class contact
 
 	// Helpers
 	
-	public function checkMot($donnee)
+	private function checkMot($donnee)
 	{
 		if(preg_match('#^[a-zA-Zà-ÿÀ-Ÿ -]+$#', $donnee))
 		{
@@ -102,7 +104,7 @@ class contact
 		}
 	}
 
-	public function checkDates($donnee)
+	private function checkDates($donnee)
 	{
 		if(isset($donnee) AND preg_match('#^(19|20)[0-9]{2}-[0-1][0-9]-[0-3][0-9]$#', $donnee))
 		{
@@ -113,8 +115,6 @@ class contact
 			echo self::ERREUR_VARIABLE . $donnee;
 		}
 	}
-
-
 
 }
 ?>

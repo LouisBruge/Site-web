@@ -1,4 +1,5 @@
 <?php
+namespace griselangue\annuaire\app\src\contactManager
 class contactManager
 {
 
@@ -25,7 +26,7 @@ class contactManager
 		$q->execute();
 	}
 
-	public function get($id)
+	public function get(int $id)
 	{
 		$id = (int) $id;
 
