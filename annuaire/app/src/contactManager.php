@@ -1,5 +1,5 @@
 <?php
-namespace griselangue\annuaire\app\src\contactManager
+namespace griselangue\annuaire\app\src;
 class contactManager
 {
 
@@ -14,7 +14,7 @@ class contactManager
 
 
 	// Fonction CRUD standarts
-	public function create(Contact $contact)
+	public function create(contact $contact)
 	{
 		$q = $this->_db->prepare('INSERT INTO contact (nom, prenom, naissance, mort) VALUES( :nom, :prenom, :naissance, :mort);');
 
@@ -31,7 +31,7 @@ class contactManager
 		$id = (int) $id;
 
 		$q = $this->_db->query('SELECT id, nom, prenom, naissance, mort FROM contact WHERE id = '. $id);
-		return new Contact($q->fetch(PDO::FETCH_ASSOC));
+		return new contact($q->fetch(PDO::FETCH_ASSOC));
 
 	}
 
@@ -43,13 +43,13 @@ class contactManager
 
 		while($donnees = $q->fetch(PDO::FETCH_ASSOC))
 		{
-			$contacts[] = new Contact($donnees);
+			$contacts[] = new contact($donnees);
 		}
 
 		return $contacts;
 	}
 
-	public function update(Contact $contact)
+	public function update(contact $contact)
 	{
 		$q = $this->_db->prepare('UPDATE contact SET nom = :nom, prenom = :prenom, naissance = :naissance, mort = :mort WHERE id = :id');
 
@@ -62,7 +62,7 @@ class contactManager
 		$q->execute();
 	}
 
-	public function destroy(Contact $contact)
+	public function destroy(contact $contact)
 	{
 		$q = $this->_db->exec('DELETE FROM contact WHERE id = ' . $perso->id());
 	}
@@ -81,7 +81,7 @@ class contactManager
 		// boucle d'inclusion dans le tableau contacts
 		while($donnees = $q->fetch(PDO::FETCH_ASSOC))
 		{
-			$contacts[] = new Contact($donnees);
+			$contacts[] = new contact($donnees);
 		}
 
 		return $contacts;

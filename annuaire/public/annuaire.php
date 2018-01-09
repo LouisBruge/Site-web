@@ -14,8 +14,7 @@
 			<?php 
 
 	use griselangue\core\connexion;
-	require __DIR__ . '/../app/src/contactManager.php';
-	require __DIR__ .  '/../app/src/contact.php';
+    use griselangue\annuaire\app\scr;
 
 	$db = new connexion('biblio', $session);
 

@@ -1,5 +1,6 @@
 <?php
-namespace griselangue\annuaire\app\src\contact
+namespace griselangue\annuaire\app\src;
+
 class contact
 {
 
