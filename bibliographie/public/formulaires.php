@@ -8,14 +8,13 @@
 	</head>
 
 	<body>
-		<?php include($_SERVER['DOCUMENT_ROOT'].'/menu.php');
-		 ?>
+		<?php include($_SERVER['DOCUMENT_ROOT'].'/menu.php'); ?>
 
 		<p>
 		<section>
-		<?php include __DIR__ . '/../app/view/ouvrage/_form.php' ?>
-		<?php include __DIR__ . '/../app/view/film/_form.php' ?>
-		<?php include __DIR__ . '/../app/view/jeux/_form.php' ?>
+		<?php include __DIR__ . '/../app/view/ouvrage/_form.php'; ?>
+		<?php include __DIR__ . '/../app/view/film/_form.php'; ?>
+		<?php include __DIR__ . '/../app/view/jeux/_form.php'; ?>
 		</section>
 		</p>
 	</main>

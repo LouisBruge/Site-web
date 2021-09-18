@@ -3,7 +3,7 @@ abstract class media
 {
     protected $_id,
         $_titre,
-	$_editeur,
+      	$_editeur,
         $_annee,
         $_commentaire;
 

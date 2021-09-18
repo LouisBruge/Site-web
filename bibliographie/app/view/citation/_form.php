@@ -1,7 +1,7 @@
 	<form method="post" action="blabla.php" id="citation">
-	<fieldset>
-	<legend> Citation </legend>
-	Citation : <br />
+	  <fieldset>
+	  <legend> Citation </legend>
+	  Citation : <br />
 		<textarea name="citation" rows="2" cols="45"> </textarea> <br />
 	Auteur(s) : <br />
 		<input type = "text" name="auteur" required/> <br />
